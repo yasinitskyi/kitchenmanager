@@ -1,0 +1,489 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mxfile host="app.diagrams.net" modified="2022-07-17T10:18:11.823Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/103.0.0.0 Safari/537.36" etag="ZlFWefdGVfHJim4C164k" version="14.8.6" type="google" pages="3">
+  <diagram id="hmY1650-K7_4HuF3zn99" name="Requirements">
+    <mxGraphModel dx="1312" dy="581" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="v9MtgqalM9K_UN9vIUTY-1" value="&lt;h1&gt;&lt;font style=&quot;font-size: 18px;&quot;&gt;Requirements&lt;/font&gt;&lt;/h1&gt;&lt;div&gt;&lt;font size=&quot;1&quot; style=&quot;&quot;&gt;&lt;b style=&quot;font-size: 14px;&quot;&gt;&lt;u&gt;System&lt;/u&gt;&lt;/b&gt;&lt;/font&gt;&lt;/div&gt;&lt;ul&gt;&lt;li&gt;Keep track of groceries at home&lt;/li&gt;&lt;li&gt;Add, modify, and delete recipes&lt;/li&gt;&lt;ul&gt;&lt;li&gt;Recipes have:&lt;/li&gt;&lt;ul&gt;&lt;li&gt;ingredients (&quot;groceries&quot;) and amounts (&quot;units&quot;?)&lt;/li&gt;&lt;li&gt;instructions&lt;/li&gt;&lt;li&gt;comments (心得)&lt;/li&gt;&lt;/ul&gt;&lt;/ul&gt;&lt;li&gt;Look up what recipes can be made using the groceries at home&lt;/li&gt;&lt;li&gt;Generate a shopping list based on a set of recipes (which groceries need to be purchased if we want to complete a given set of recipes)&lt;/li&gt;&lt;li&gt;Support multiple users (multiple people can log into the same server)&lt;/li&gt;&lt;li&gt;Support multiple kitchens (multiple users can share a kitchen)&lt;/li&gt;&lt;ul&gt;&lt;li&gt;Kitchens have:&lt;/li&gt;&lt;ul&gt;&lt;li&gt;groceries&lt;/li&gt;&lt;li&gt;recipes&lt;/li&gt;&lt;li&gt;one head chef (主廚)&lt;/li&gt;&lt;li&gt;many sous chefs (副主廚)&lt;/li&gt;&lt;/ul&gt;&lt;/ul&gt;&lt;li&gt;Simple kitchen-based permission scheme (everyone belonging to a kitchen can do anything in that kitchen)&lt;/li&gt;&lt;ul&gt;&lt;li&gt;head chef can add or remove sous chefs to a kitchen&lt;/li&gt;&lt;li&gt;sous chefs can do everything head chefs can do, except add or remove other chefs&lt;/li&gt;&lt;/ul&gt;&lt;/ul&gt;&lt;div&gt;&lt;font style=&quot;font-size: 14px;&quot;&gt;&lt;b&gt;&lt;u&gt;Interface&lt;/u&gt;&lt;/b&gt;&lt;/font&gt;&lt;/div&gt;&lt;div style=&quot;&quot;&gt;&lt;ul&gt;&lt;li&gt;&lt;span style=&quot;&quot;&gt;Desktop browser support&lt;/span&gt;&lt;/li&gt;&lt;li&gt;&lt;span style=&quot;&quot;&gt;Mobile browser support&lt;/span&gt;&lt;/li&gt;&lt;li&gt;&lt;span style=&quot;&quot;&gt;Advanced features:&lt;/span&gt;&lt;/li&gt;&lt;ol&gt;&lt;li&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;support simultaneous editing + autosave&lt;/span&gt;&lt;/li&gt;&lt;li&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;push notifications&lt;/span&gt;&lt;/li&gt;&lt;/ol&gt;&lt;li&gt;&lt;span style=&quot;&quot;&gt;UI&lt;/span&gt;&lt;/li&gt;&lt;ul&gt;&lt;li&gt;&lt;span style=&quot;&quot;&gt;tabbed approach?&lt;/span&gt;&lt;/li&gt;&lt;li&gt;&lt;span style=&quot;&quot;&gt;react (for v1?)&lt;/span&gt;&lt;/li&gt;&lt;li&gt;&lt;span style=&quot;&quot;&gt;typescript?&lt;/span&gt;&lt;/li&gt;&lt;/ul&gt;&lt;/ul&gt;&lt;/div&gt;&lt;p&gt;&lt;/p&gt;" style="text;html=1;strokeColor=none;fillColor=none;spacing=5;spacingTop=-20;whiteSpace=wrap;overflow=hidden;rounded=0;" parent="1" vertex="1">
+          <mxGeometry x="70" y="40" width="580" height="600" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+  <diagram id="YL8mSLsgi2g4eEONmtrs" name="Models">
+    <mxGraphModel dx="2956" dy="830" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="mLFEw-IBUbFVCugntGrT-29" value="" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f5f5f5;fontColor=#333333;strokeColor=#666666;" vertex="1" parent="1">
+          <mxGeometry x="-290" y="890" width="720" height="400" as="geometry" />
+        </mxCell>
+        <mxCell id="mLFEw-IBUbFVCugntGrT-8" value="" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" vertex="1" parent="1">
+          <mxGeometry x="-270" y="930" width="190" height="340" as="geometry" />
+        </mxCell>
+        <mxCell id="lGzZCrJNcRRQSjwj0Re9-13" value="&lt;p style=&quot;margin: 0px ; margin-top: 4px ; text-align: center&quot;&gt;&lt;b&gt;Kitchen&lt;/b&gt;&lt;/p&gt;&lt;hr size=&quot;1&quot;&gt;&lt;p style=&quot;margin: 0px ; margin-left: 4px&quot;&gt;+ Ingredients: []Ingredient&lt;/p&gt;&lt;p style=&quot;margin: 0px ; margin-left: 4px&quot;&gt;+ Recipes: []Recipe&lt;/p&gt;&lt;p style=&quot;margin: 0px ; margin-left: 4px&quot;&gt;+ HeadChefs: []User&lt;/p&gt;&lt;p style=&quot;margin: 0px ; margin-left: 4px&quot;&gt;+ SousChefs: []User&lt;/p&gt;&lt;p style=&quot;margin: 0px ; margin-left: 4px&quot;&gt;+ Public: bool&lt;/p&gt;&lt;p style=&quot;margin: 0px ; margin-left: 4px&quot;&gt;&lt;br&gt;&lt;/p&gt;&lt;p style=&quot;margin: 0px ; margin-left: 4px&quot;&gt;+ Name: string&lt;/p&gt;&lt;p style=&quot;margin: 0px ; margin-left: 4px&quot;&gt;+ Uuid: string&lt;br&gt;&lt;/p&gt;&lt;p style=&quot;margin: 0px ; margin-left: 4px&quot;&gt;+ CreatedAt: date&lt;br&gt;&lt;/p&gt;&lt;p style=&quot;margin: 0px ; margin-left: 4px&quot;&gt;&lt;br&gt;&lt;/p&gt;&lt;hr size=&quot;1&quot;&gt;&lt;p style=&quot;margin: 0px ; margin-left: 4px&quot;&gt;&lt;br&gt;&lt;/p&gt;" style="verticalAlign=top;align=left;overflow=fill;fontSize=12;fontFamily=Helvetica;html=1;" vertex="1" parent="1">
+          <mxGeometry x="260" y="120" width="160" height="170" as="geometry" />
+        </mxCell>
+        <mxCell id="lGzZCrJNcRRQSjwj0Re9-14" value="&lt;p style=&quot;margin: 0px ; margin-top: 4px ; text-align: center&quot;&gt;&lt;b&gt;Recipe&lt;/b&gt;&lt;br&gt;&lt;/p&gt;&lt;hr size=&quot;1&quot;&gt;&lt;p style=&quot;margin: 0px ; margin-left: 4px&quot;&gt;+ Name: String,&lt;/p&gt;&lt;p style=&quot;margin: 0px ; margin-left: 4px&quot;&gt;+ Description: String,&lt;br&gt;+ Ingredients: []Ingredient,&lt;/p&gt;&lt;p style=&quot;margin: 0px ; margin-left: 4px&quot;&gt;+ Instructions: []String,&lt;br&gt;&lt;/p&gt;&lt;p style=&quot;margin: 0px ; margin-left: 4px&quot;&gt;+ CreatedAt: Date,&lt;/p&gt;&lt;p style=&quot;margin: 0px ; margin-left: 4px&quot;&gt;&lt;br&gt;&lt;/p&gt;&lt;p style=&quot;margin: 0px ; margin-left: 4px&quot;&gt;+ Author: User,&lt;/p&gt;&lt;p style=&quot;margin: 0px ; margin-left: 4px&quot;&gt;+ Comments: []Comment,&lt;/p&gt;&lt;p style=&quot;margin: 0px ; margin-left: 4px&quot;&gt;&lt;br&gt;&lt;/p&gt;" style="verticalAlign=top;align=left;overflow=fill;fontSize=12;fontFamily=Helvetica;html=1;" vertex="1" parent="1">
+          <mxGeometry x="80" y="120" width="160" height="170" as="geometry" />
+        </mxCell>
+        <mxCell id="nEl8o4MwNoknEJMQvaga-1" value="&lt;p style=&quot;margin:0px;margin-top:4px;text-align:center;&quot;&gt;&lt;b&gt;Grocery&lt;/b&gt;&lt;/p&gt;&lt;hr size=&quot;1&quot;&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;+ Name: string&lt;/p&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;+ Description: string&lt;/p&gt;&lt;hr size=&quot;1&quot;&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;+ method(): Type&lt;/p&gt;" style="verticalAlign=top;align=left;overflow=fill;fontSize=12;fontFamily=Helvetica;html=1;fillColor=#d5e8d4;strokeColor=#82b366;opacity=90;sketch=1;" vertex="1" parent="1">
+          <mxGeometry x="84" y="2340" width="160" height="170" as="geometry" />
+        </mxCell>
+        <mxCell id="nEl8o4MwNoknEJMQvaga-2" value="&lt;p style=&quot;margin:0px;margin-top:4px;text-align:center;&quot;&gt;&lt;b&gt;Ingredient&lt;/b&gt;&lt;/p&gt;&lt;hr size=&quot;1&quot;&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;+ Grocery: Grocery&lt;/p&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;+ Unit: string&lt;/span&gt;&lt;br&gt;&lt;/p&gt;&lt;p style=&quot;margin: 0px 0px 0px 4px;&quot;&gt;+ Amount: float64&lt;/p&gt;&lt;hr size=&quot;1&quot;&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;+ method(): Type&lt;/p&gt;" style="verticalAlign=top;align=left;overflow=fill;fontSize=12;fontFamily=Helvetica;html=1;fillColor=#d5e8d4;strokeColor=#82b366;opacity=90;sketch=1;" vertex="1" parent="1">
+          <mxGeometry x="254" y="2340" width="160" height="170" as="geometry" />
+        </mxCell>
+        <mxCell id="nEl8o4MwNoknEJMQvaga-4" value="&lt;p style=&quot;margin:0px;margin-top:4px;text-align:center;text-decoration:underline;&quot;&gt;&lt;b&gt;Object:Ingredient&lt;/b&gt;&lt;/p&gt;&lt;hr&gt;&lt;p style=&quot;margin:0px;margin-left:8px;&quot;&gt;Grocery = Grocery{&quot;Milk&quot;}&lt;br&gt;Unit = &quot;ml&quot;&lt;br&gt;Amount = 500&lt;/p&gt;" style="verticalAlign=top;align=left;overflow=fill;fontSize=12;fontFamily=Helvetica;html=1;fillColor=#d5e8d4;strokeColor=#82b366;opacity=90;sketch=1;" vertex="1" parent="1">
+          <mxGeometry x="254" y="2520" width="160" height="90" as="geometry" />
+        </mxCell>
+        <mxCell id="nEl8o4MwNoknEJMQvaga-5" value="&lt;p style=&quot;margin:0px;margin-top:4px;text-align:center;text-decoration:underline;&quot;&gt;&lt;b&gt;Object:Grocery&lt;/b&gt;&lt;/p&gt;&lt;hr&gt;&lt;p style=&quot;margin:0px;margin-left:8px;&quot;&gt;Grocery = &quot;Milk&quot;&lt;br&gt;Description = &quot;...&quot;&lt;/p&gt;" style="verticalAlign=top;align=left;overflow=fill;fontSize=12;fontFamily=Helvetica;html=1;fillColor=#d5e8d4;strokeColor=#82b366;opacity=90;sketch=1;" vertex="1" parent="1">
+          <mxGeometry x="84" y="2520" width="160" height="90" as="geometry" />
+        </mxCell>
+        <mxCell id="nEl8o4MwNoknEJMQvaga-8" value="&lt;p style=&quot;margin:0px;margin-top:4px;text-align:center;&quot;&gt;&lt;b&gt;Grocery&lt;/b&gt;&lt;/p&gt;&lt;hr size=&quot;1&quot;&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;+ Name: string&lt;/p&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;+ Description: string&lt;/p&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;+ PhysicalState: string&lt;/p&gt;&lt;hr size=&quot;1&quot;&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;+ method(): Type&lt;/p&gt;" style="verticalAlign=top;align=left;overflow=fill;fontSize=12;fontFamily=Helvetica;html=1;fillColor=#f8cecc;strokeColor=#b85450;sketch=1;" vertex="1" parent="1">
+          <mxGeometry x="80" y="2050" width="160" height="170" as="geometry" />
+        </mxCell>
+        <mxCell id="nEl8o4MwNoknEJMQvaga-9" value="&lt;p style=&quot;margin:0px;margin-top:4px;text-align:center;&quot;&gt;&lt;b&gt;Ingredient&lt;/b&gt;&lt;/p&gt;&lt;hr size=&quot;1&quot;&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;+ Grocery: Grocery&lt;/p&gt;&lt;p style=&quot;margin: 0px 0px 0px 4px;&quot;&gt;+ Amount: float64&lt;/p&gt;&lt;hr size=&quot;1&quot;&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;+ method(): Type&lt;/p&gt;" style="verticalAlign=top;align=left;overflow=fill;fontSize=12;fontFamily=Helvetica;html=1;fillColor=#f8cecc;strokeColor=#b85450;sketch=1;" vertex="1" parent="1">
+          <mxGeometry x="250" y="2050" width="160" height="170" as="geometry" />
+        </mxCell>
+        <mxCell id="nEl8o4MwNoknEJMQvaga-10" value="&lt;p style=&quot;margin:0px;margin-top:4px;text-align:center;text-decoration:underline;&quot;&gt;&lt;b&gt;Object:Ingredient&lt;/b&gt;&lt;/p&gt;&lt;hr&gt;&lt;p style=&quot;margin:0px;margin-left:8px;&quot;&gt;Grocery = Grocery{&quot;Milk&quot;}&lt;br&gt;Amount = 500&lt;/p&gt;" style="verticalAlign=top;align=left;overflow=fill;fontSize=12;fontFamily=Helvetica;html=1;fillColor=#f8cecc;strokeColor=#b85450;sketch=1;" vertex="1" parent="1">
+          <mxGeometry x="250" y="2230" width="160" height="90" as="geometry" />
+        </mxCell>
+        <mxCell id="nEl8o4MwNoknEJMQvaga-11" value="&lt;p style=&quot;margin:0px;margin-top:4px;text-align:center;text-decoration:underline;&quot;&gt;&lt;b&gt;Object:Grocery&lt;/b&gt;&lt;/p&gt;&lt;hr&gt;&lt;p style=&quot;margin:0px;margin-left:8px;&quot;&gt;Grocery = &quot;Milk&quot;&lt;br&gt;Description = &quot;...&quot;&lt;/p&gt;&lt;p style=&quot;margin:0px;margin-left:8px;&quot;&gt;PhysicalState = &quot;liquid&quot;&lt;/p&gt;" style="verticalAlign=top;align=left;overflow=fill;fontSize=12;fontFamily=Helvetica;html=1;fillColor=#f8cecc;strokeColor=#b85450;sketch=1;" vertex="1" parent="1">
+          <mxGeometry x="80" y="2230" width="160" height="90" as="geometry" />
+        </mxCell>
+        <mxCell id="nEl8o4MwNoknEJMQvaga-12" value="&lt;p style=&quot;margin:0px;margin-top:4px;text-align:center;&quot;&gt;&lt;b&gt;Grocery&lt;/b&gt;&lt;/p&gt;&lt;hr size=&quot;1&quot;&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;+ Name: string&lt;/p&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;+ Description: string&lt;/p&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;+ Unit: string&lt;/p&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;&lt;br&gt;&lt;/p&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;&lt;strike&gt;+ KitchenUuid: string&lt;/strike&gt;&lt;/p&gt;" style="verticalAlign=top;align=left;overflow=fill;fontSize=12;fontFamily=Helvetica;html=1;" vertex="1" parent="1">
+          <mxGeometry x="620" y="310" width="160" height="120" as="geometry" />
+        </mxCell>
+        <mxCell id="nEl8o4MwNoknEJMQvaga-13" value="&lt;p style=&quot;margin:0px;margin-top:4px;text-align:center;&quot;&gt;&lt;b&gt;Ingredient&lt;/b&gt;&lt;/p&gt;&lt;hr size=&quot;1&quot;&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;+ Grocery: Grocery&lt;/p&gt;&lt;p style=&quot;margin: 0px 0px 0px 4px;&quot;&gt;+ Amount: float64&lt;/p&gt;&lt;p style=&quot;margin: 0px 0px 0px 4px;&quot;&gt;&lt;br&gt;&lt;/p&gt;&lt;hr size=&quot;1&quot;&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;+ method(): Type&lt;/p&gt;" style="verticalAlign=top;align=left;overflow=fill;fontSize=12;fontFamily=Helvetica;html=1;" vertex="1" parent="1">
+          <mxGeometry x="440" y="310" width="160" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="nEl8o4MwNoknEJMQvaga-14" value="&lt;p style=&quot;margin:0px;margin-top:4px;text-align:center;text-decoration:underline;&quot;&gt;&lt;b&gt;Object:Ingredient&lt;/b&gt;&lt;/p&gt;&lt;hr&gt;&lt;p style=&quot;margin:0px;margin-left:8px;&quot;&gt;Grocery = Grocery{&quot;Milk&quot;}&lt;br&gt;Amount = 500&lt;/p&gt;" style="verticalAlign=top;align=left;overflow=fill;fontSize=12;fontFamily=Helvetica;html=1;fillColor=#e1d5e7;strokeColor=#9673a6;" vertex="1" parent="1">
+          <mxGeometry x="610" y="2750" width="160" height="90" as="geometry" />
+        </mxCell>
+        <mxCell id="nEl8o4MwNoknEJMQvaga-15" value="&lt;p style=&quot;margin:0px;margin-top:4px;text-align:center;text-decoration:underline;&quot;&gt;&lt;b&gt;Object:Grocery&lt;/b&gt;&lt;/p&gt;&lt;hr&gt;&lt;p style=&quot;margin:0px;margin-left:8px;&quot;&gt;Grocery = &quot;Milk&quot;&lt;br&gt;Description = &quot;...&quot;&lt;/p&gt;&lt;p style=&quot;margin:0px;margin-left:8px;&quot;&gt;Unit = &quot;ml&quot;&lt;/p&gt;" style="verticalAlign=top;align=left;overflow=fill;fontSize=12;fontFamily=Helvetica;html=1;fillColor=#e1d5e7;strokeColor=#9673a6;" vertex="1" parent="1">
+          <mxGeometry x="440" y="2750" width="160" height="90" as="geometry" />
+        </mxCell>
+        <mxCell id="nEl8o4MwNoknEJMQvaga-16" value="&lt;p style=&quot;margin:0px;margin-top:4px;text-align:center;text-decoration:underline;&quot;&gt;&lt;b&gt;Object:Grocery&lt;/b&gt;&lt;/p&gt;&lt;hr&gt;&lt;p style=&quot;margin:0px;margin-left:8px;&quot;&gt;Grocery = &quot;Bread&quot;&lt;br&gt;Description = &quot;...&quot;&lt;/p&gt;&lt;p style=&quot;margin:0px;margin-left:8px;&quot;&gt;Unit = &quot;loaf&quot;&lt;/p&gt;" style="verticalAlign=top;align=left;overflow=fill;fontSize=12;fontFamily=Helvetica;html=1;fillColor=#e1d5e7;strokeColor=#9673a6;" vertex="1" parent="1">
+          <mxGeometry x="440" y="2050" width="160" height="90" as="geometry" />
+        </mxCell>
+        <mxCell id="nEl8o4MwNoknEJMQvaga-17" value="&lt;p style=&quot;margin:0px;margin-top:4px;text-align:center;text-decoration:underline;&quot;&gt;&lt;b&gt;Object:Ingredient&lt;/b&gt;&lt;/p&gt;&lt;hr&gt;&lt;p style=&quot;margin:0px;margin-left:8px;&quot;&gt;Grocery = G{&quot;Sliced Bread&quot;}&lt;br&gt;Amount = 2&lt;/p&gt;" style="verticalAlign=top;align=left;overflow=fill;fontSize=12;fontFamily=Helvetica;html=1;fillColor=#e1d5e7;strokeColor=#9673a6;" vertex="1" parent="1">
+          <mxGeometry x="610" y="2150" width="160" height="90" as="geometry" />
+        </mxCell>
+        <mxCell id="nEl8o4MwNoknEJMQvaga-18" value="&lt;p style=&quot;margin:0px;margin-top:4px;text-align:center;text-decoration:underline;&quot;&gt;&lt;b&gt;Object:Ingredient&lt;/b&gt;&lt;/p&gt;&lt;hr&gt;&lt;p style=&quot;margin:0px;margin-left:8px;&quot;&gt;Grocery = Grocery{&quot;Bread&quot;}&lt;br&gt;Unit = &quot;slice&quot;&lt;br&gt;Amount = 2&lt;/p&gt;" style="verticalAlign=top;align=left;overflow=fill;fontSize=12;fontFamily=Helvetica;html=1;fillColor=#d5e8d4;strokeColor=#82b366;opacity=90;sketch=1;" vertex="1" parent="1">
+          <mxGeometry x="254" y="2620" width="160" height="90" as="geometry" />
+        </mxCell>
+        <mxCell id="nEl8o4MwNoknEJMQvaga-19" value="&lt;p style=&quot;margin:0px;margin-top:4px;text-align:center;text-decoration:underline;&quot;&gt;&lt;b&gt;Object:Grocery&lt;/b&gt;&lt;/p&gt;&lt;hr&gt;&lt;p style=&quot;margin:0px;margin-left:8px;&quot;&gt;Grocery = &quot;Bread&quot;&lt;br&gt;Description = &quot;...&quot;&lt;/p&gt;" style="verticalAlign=top;align=left;overflow=fill;fontSize=12;fontFamily=Helvetica;html=1;fillColor=#d5e8d4;strokeColor=#82b366;opacity=90;sketch=1;" vertex="1" parent="1">
+          <mxGeometry x="84" y="2620" width="160" height="90" as="geometry" />
+        </mxCell>
+        <mxCell id="nEl8o4MwNoknEJMQvaga-20" value="&lt;p style=&quot;margin:0px;margin-top:4px;text-align:center;text-decoration:underline;&quot;&gt;&lt;b&gt;Object:Ingredient&lt;/b&gt;&lt;/p&gt;&lt;hr&gt;&lt;p style=&quot;margin:0px;margin-left:8px;&quot;&gt;Grocery = Grocery{&quot;Bread&quot;}&lt;br&gt;Unit = &quot;loaf&quot;&lt;br&gt;Amount = 1&lt;/p&gt;" style="verticalAlign=top;align=left;overflow=fill;fontSize=12;fontFamily=Helvetica;html=1;fillColor=#d5e8d4;strokeColor=#82b366;opacity=90;sketch=1;" vertex="1" parent="1">
+          <mxGeometry x="254" y="2720" width="160" height="90" as="geometry" />
+        </mxCell>
+        <mxCell id="nEl8o4MwNoknEJMQvaga-21" value="&lt;p style=&quot;margin:0px;margin-top:4px;text-align:center;text-decoration:underline;&quot;&gt;&lt;b&gt;Object:Ingredient&lt;/b&gt;&lt;/p&gt;&lt;hr&gt;&lt;p style=&quot;margin:0px;margin-left:8px;&quot;&gt;Grocery = Grocery{&quot;Bread&quot;}&lt;br&gt;Unit = &quot;g&quot;&lt;br&gt;Amount = 250&lt;/p&gt;" style="verticalAlign=top;align=left;overflow=fill;fontSize=12;fontFamily=Helvetica;html=1;fillColor=#d5e8d4;strokeColor=#82b366;opacity=90;sketch=1;" vertex="1" parent="1">
+          <mxGeometry x="254" y="2820" width="160" height="90" as="geometry" />
+        </mxCell>
+        <mxCell id="nEl8o4MwNoknEJMQvaga-23" value="&lt;p style=&quot;margin:0px;margin-top:4px;text-align:center;text-decoration:underline;&quot;&gt;&lt;b&gt;Object:Ingredient&lt;/b&gt;&lt;/p&gt;&lt;hr&gt;&lt;p style=&quot;margin:0px;margin-left:8px;&quot;&gt;Grocery = G{&quot;Sliced Bread&quot;}&lt;br&gt;Amount = 12&lt;/p&gt;" style="verticalAlign=top;align=left;overflow=fill;fontSize=12;fontFamily=Helvetica;html=1;fillColor=#e1d5e7;strokeColor=#9673a6;strokeWidth=1;" vertex="1" parent="1">
+          <mxGeometry x="610" y="2250" width="160" height="90" as="geometry" />
+        </mxCell>
+        <mxCell id="nEl8o4MwNoknEJMQvaga-24" value="&lt;p style=&quot;margin:0px;margin-top:4px;text-align:center;text-decoration:underline;&quot;&gt;&lt;b&gt;Object:Grocery&lt;/b&gt;&lt;/p&gt;&lt;hr&gt;&lt;p style=&quot;margin:0px;margin-left:8px;&quot;&gt;Grocery = &quot;Sliced Bread&quot;&lt;br&gt;Description = &quot;...&quot;&lt;/p&gt;&lt;p style=&quot;margin:0px;margin-left:8px;&quot;&gt;Unit = &quot;slice&quot;&lt;/p&gt;" style="verticalAlign=top;align=left;overflow=fill;fontSize=12;fontFamily=Helvetica;html=1;fillColor=#e1d5e7;strokeColor=#9673a6;" vertex="1" parent="1">
+          <mxGeometry x="440" y="2150" width="160" height="90" as="geometry" />
+        </mxCell>
+        <mxCell id="nEl8o4MwNoknEJMQvaga-25" value="&lt;p style=&quot;margin:0px;margin-top:4px;text-align:center;text-decoration:underline;&quot;&gt;&lt;b&gt;Object:Ingredient&lt;/b&gt;&lt;/p&gt;&lt;hr&gt;&lt;p style=&quot;margin:0px;margin-left:8px;&quot;&gt;Grocery = Grocery{&quot;Bread&quot;}&lt;br&gt;Amount = 1&lt;/p&gt;" style="verticalAlign=top;align=left;overflow=fill;fontSize=12;fontFamily=Helvetica;html=1;fillColor=#e1d5e7;strokeColor=#9673a6;" vertex="1" parent="1">
+          <mxGeometry x="610" y="2050" width="160" height="90" as="geometry" />
+        </mxCell>
+        <mxCell id="nEl8o4MwNoknEJMQvaga-26" value="&lt;p style=&quot;margin:0px;margin-top:4px;text-align:center;text-decoration:underline;&quot;&gt;&lt;b&gt;Object:Grocery&lt;/b&gt;&lt;/p&gt;&lt;hr&gt;&lt;p style=&quot;margin:0px;margin-left:8px;&quot;&gt;Grocery = &quot;Gram Bread&quot;&lt;br&gt;Description = &quot;...&quot;&lt;/p&gt;&lt;p style=&quot;margin:0px;margin-left:8px;&quot;&gt;Unit = &quot;g&quot;&lt;/p&gt;" style="verticalAlign=top;align=left;overflow=fill;fontSize=12;fontFamily=Helvetica;html=1;fillColor=#e1d5e7;strokeColor=#9673a6;" vertex="1" parent="1">
+          <mxGeometry x="440" y="2350" width="160" height="90" as="geometry" />
+        </mxCell>
+        <mxCell id="nEl8o4MwNoknEJMQvaga-27" value="&lt;p style=&quot;margin:0px;margin-top:4px;text-align:center;text-decoration:underline;&quot;&gt;&lt;b&gt;Object:Ingredient&lt;/b&gt;&lt;/p&gt;&lt;hr&gt;&lt;p style=&quot;margin:0px;margin-left:8px;&quot;&gt;Grocery = G{&quot;Gram Bread&quot;}&lt;br&gt;Amount = 250&lt;/p&gt;" style="verticalAlign=top;align=left;overflow=fill;fontSize=12;fontFamily=Helvetica;html=1;fillColor=#e1d5e7;strokeColor=#9673a6;" vertex="1" parent="1">
+          <mxGeometry x="610" y="2350" width="160" height="90" as="geometry" />
+        </mxCell>
+        <mxCell id="nEl8o4MwNoknEJMQvaga-28" value="&lt;p style=&quot;margin:0px;margin-top:4px;text-align:center;text-decoration:underline;&quot;&gt;&lt;b&gt;Object:Grocery&lt;/b&gt;&lt;/p&gt;&lt;hr&gt;&lt;p style=&quot;margin:0px;margin-left:8px;&quot;&gt;Grocery = &quot;Cheese&quot;&lt;br&gt;Description = &quot;...&quot;&lt;/p&gt;&lt;p style=&quot;margin:0px;margin-left:8px;&quot;&gt;Unit = &quot;g&quot;&lt;/p&gt;" style="verticalAlign=top;align=left;overflow=fill;fontSize=12;fontFamily=Helvetica;html=1;fillColor=#e1d5e7;strokeColor=#9673a6;" vertex="1" parent="1">
+          <mxGeometry x="440" y="2450" width="160" height="90" as="geometry" />
+        </mxCell>
+        <mxCell id="nEl8o4MwNoknEJMQvaga-29" value="&lt;p style=&quot;margin:0px;margin-top:4px;text-align:center;text-decoration:underline;&quot;&gt;&lt;b&gt;Object:Ingredient&lt;/b&gt;&lt;/p&gt;&lt;hr&gt;&lt;p style=&quot;margin:0px;margin-left:8px;&quot;&gt;Grocery = G{&quot;Sliced Bread&quot;}&lt;br&gt;Amount = 2&lt;/p&gt;" style="verticalAlign=top;align=left;overflow=fill;fontSize=12;fontFamily=Helvetica;html=1;fillColor=#e1d5e7;strokeColor=#9673a6;" vertex="1" parent="1">
+          <mxGeometry x="610" y="2550" width="160" height="90" as="geometry" />
+        </mxCell>
+        <mxCell id="nEl8o4MwNoknEJMQvaga-30" value="&lt;p style=&quot;margin:0px;margin-top:4px;text-align:center;text-decoration:underline;&quot;&gt;&lt;b&gt;Object:Grocery&lt;/b&gt;&lt;/p&gt;&lt;hr&gt;&lt;p style=&quot;margin:0px;margin-left:8px;&quot;&gt;Grocery = &quot;Sliced Cheese&quot;&lt;br&gt;Description = &quot;...&quot;&lt;/p&gt;&lt;p style=&quot;margin:0px;margin-left:8px;&quot;&gt;Unit = &quot;slice&quot;&lt;/p&gt;" style="verticalAlign=top;align=left;overflow=fill;fontSize=12;fontFamily=Helvetica;html=1;fillColor=#e1d5e7;strokeColor=#9673a6;" vertex="1" parent="1">
+          <mxGeometry x="440" y="2550" width="160" height="90" as="geometry" />
+        </mxCell>
+        <mxCell id="nEl8o4MwNoknEJMQvaga-31" value="&lt;p style=&quot;margin:0px;margin-top:4px;text-align:center;text-decoration:underline;&quot;&gt;&lt;b&gt;Object:Ingredient&lt;/b&gt;&lt;/p&gt;&lt;hr&gt;&lt;p style=&quot;margin:0px;margin-left:8px;&quot;&gt;Grocery = G{&quot;Cheese&quot;}&lt;br&gt;Amount = 100&lt;/p&gt;" style="verticalAlign=top;align=left;overflow=fill;fontSize=12;fontFamily=Helvetica;html=1;fillColor=#e1d5e7;strokeColor=#9673a6;" vertex="1" parent="1">
+          <mxGeometry x="610" y="2450" width="160" height="90" as="geometry" />
+        </mxCell>
+        <mxCell id="nEl8o4MwNoknEJMQvaga-32" value="&lt;p style=&quot;margin:0px;margin-top:4px;text-align:center;text-decoration:underline;&quot;&gt;&lt;b&gt;Object:Ingredient&lt;/b&gt;&lt;/p&gt;&lt;hr&gt;&lt;p style=&quot;margin:0px;margin-left:8px;&quot;&gt;Grocery = G{&quot;Flour&quot;}&lt;br&gt;Amount = 250&lt;/p&gt;" style="verticalAlign=top;align=left;overflow=fill;fontSize=12;fontFamily=Helvetica;html=1;fillColor=#e1d5e7;strokeColor=#9673a6;" vertex="1" parent="1">
+          <mxGeometry x="610" y="2650" width="160" height="90" as="geometry" />
+        </mxCell>
+        <mxCell id="nEl8o4MwNoknEJMQvaga-33" value="&lt;p style=&quot;margin:0px;margin-top:4px;text-align:center;text-decoration:underline;&quot;&gt;&lt;b&gt;Object:Grocery&lt;/b&gt;&lt;/p&gt;&lt;hr&gt;&lt;p style=&quot;margin:0px;margin-left:8px;&quot;&gt;Grocery = &quot;Flour&quot;&lt;br&gt;Description = &quot;...&quot;&lt;/p&gt;&lt;p style=&quot;margin:0px;margin-left:8px;&quot;&gt;Unit = &quot;g&quot;&lt;/p&gt;" style="verticalAlign=top;align=left;overflow=fill;fontSize=12;fontFamily=Helvetica;html=1;fillColor=#e1d5e7;strokeColor=#9673a6;" vertex="1" parent="1">
+          <mxGeometry x="440" y="2650" width="160" height="90" as="geometry" />
+        </mxCell>
+        <mxCell id="6wevwXihFBmRbkcoCISg-3" value="&lt;p style=&quot;margin: 0px ; margin-top: 4px ; text-align: center&quot;&gt;&lt;b&gt;User&lt;/b&gt;&lt;/p&gt;&lt;hr size=&quot;1&quot;&gt;&lt;p style=&quot;margin: 0px ; margin-left: 4px&quot;&gt;&lt;span&gt;+ Username: string&lt;/span&gt;&lt;br&gt;&lt;/p&gt;&lt;p style=&quot;margin: 0px ; margin-left: 4px&quot;&gt;+ Email: string&lt;/p&gt;&lt;p style=&quot;margin: 0px ; margin-left: 4px&quot;&gt;+ Password: string&lt;/p&gt;&lt;p style=&quot;margin: 0px ; margin-left: 4px&quot;&gt;+ Oauth: string&lt;/p&gt;&lt;p style=&quot;margin: 0px ; margin-left: 4px&quot;&gt;&lt;br&gt;&lt;/p&gt;&lt;p style=&quot;margin: 0px ; margin-left: 4px&quot;&gt;+ CreatedAt: date&lt;br&gt;&lt;/p&gt;&lt;p style=&quot;margin: 0px ; margin-left: 4px&quot;&gt;&lt;br&gt;&lt;/p&gt;" style="verticalAlign=top;align=left;overflow=fill;fontSize=12;fontFamily=Helvetica;html=1;" vertex="1" parent="1">
+          <mxGeometry x="440" y="120" width="160" height="170" as="geometry" />
+        </mxCell>
+        <mxCell id="naAakRVjlGUpHcAN77c5-5" value="&lt;p style=&quot;margin: 0px ; margin-top: 4px ; text-align: center&quot;&gt;&lt;b&gt;Comment&lt;/b&gt;&lt;/p&gt;&lt;hr size=&quot;1&quot;&gt;&lt;p style=&quot;margin: 0px ; margin-left: 4px&quot;&gt;+ User: User,&lt;/p&gt;&lt;p style=&quot;margin: 0px ; margin-left: 4px&quot;&gt;+ CreatedAt: Date,&lt;/p&gt;&lt;p style=&quot;margin: 0px ; margin-left: 4px&quot;&gt;+ Comment: String,&lt;/p&gt;&lt;hr size=&quot;1&quot;&gt;&lt;p style=&quot;margin: 0px ; margin-left: 4px&quot;&gt;&lt;br&gt;&lt;/p&gt;" style="verticalAlign=top;align=left;overflow=fill;fontSize=12;fontFamily=Helvetica;html=1;" vertex="1" parent="1">
+          <mxGeometry x="80" y="310" width="160" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="naAakRVjlGUpHcAN77c5-6" value="&lt;p style=&quot;margin: 0px ; margin-top: 4px ; text-align: center&quot;&gt;&lt;b&gt;ShoppingList&lt;/b&gt;&lt;/p&gt;&lt;hr size=&quot;1&quot;&gt;&lt;p style=&quot;margin: 0px ; margin-left: 4px&quot;&gt;+ Items: []Ingredient&amp;nbsp;&lt;/p&gt;" style="verticalAlign=top;align=left;overflow=fill;fontSize=12;fontFamily=Helvetica;html=1;" vertex="1" parent="1">
+          <mxGeometry x="260" y="310" width="160" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="WQD5yJzZN2j5FCFIfD-J-1" value="&lt;p style=&quot;margin: 0px ; margin-top: 4px ; text-align: center&quot;&gt;&lt;b&gt;Role (RBAC)&lt;/b&gt;&lt;/p&gt;&lt;hr size=&quot;1&quot;&gt;&lt;p style=&quot;margin: 0px ; margin-left: 4px&quot;&gt;Roles: HeadChef, SousChef&lt;/p&gt;&lt;p style=&quot;margin: 0px ; margin-left: 4px&quot;&gt;Objects: Kitchen&lt;/p&gt;&lt;p style=&quot;margin: 0px ; margin-left: 4px&quot;&gt;Abilties:&lt;/p&gt;&lt;p style=&quot;margin: 0px ; margin-left: 4px&quot;&gt;- Everything&lt;/p&gt;&lt;p style=&quot;margin: 0px ; margin-left: 4px&quot;&gt;- Everything but adding roles&lt;/p&gt;&lt;p style=&quot;margin: 0px ; margin-left: 4px&quot;&gt;&lt;br&gt;&lt;/p&gt;" style="verticalAlign=top;align=left;overflow=fill;fontSize=12;fontFamily=Helvetica;html=1;" vertex="1" parent="1">
+          <mxGeometry x="620" y="120" width="160" height="170" as="geometry" />
+        </mxCell>
+        <mxCell id="mLFEw-IBUbFVCugntGrT-2" value="&lt;p style=&quot;margin:0px;margin-top:4px;text-align:center;text-decoration:underline;&quot;&gt;&lt;b&gt;Object:Grocery&lt;/b&gt;&lt;/p&gt;&lt;hr&gt;&lt;p style=&quot;margin:0px;margin-left:8px;&quot;&gt;Grocery = &quot;Bread&quot;&lt;br&gt;Description = &quot;...&quot;&lt;/p&gt;&lt;p style=&quot;margin:0px;margin-left:8px;&quot;&gt;Unit = &quot;loaf&quot;&lt;/p&gt;" style="verticalAlign=top;align=left;overflow=fill;fontSize=12;fontFamily=Helvetica;html=1;fillColor=#f5f5f5;strokeColor=#666666;fontColor=#333333;" vertex="1" parent="1">
+          <mxGeometry x="-255" y="960" width="160" height="90" as="geometry" />
+        </mxCell>
+        <mxCell id="mLFEw-IBUbFVCugntGrT-5" value="&lt;p style=&quot;margin:0px;margin-top:4px;text-align:center;text-decoration:underline;&quot;&gt;&lt;b&gt;Object:Grocery&lt;/b&gt;&lt;/p&gt;&lt;hr&gt;&lt;p style=&quot;margin:0px;margin-left:8px;&quot;&gt;Grocery = &quot;Swiss Cheese&quot;&lt;br&gt;Description = &quot;...&quot;&lt;/p&gt;&lt;p style=&quot;margin:0px;margin-left:8px;&quot;&gt;Unit = &quot;g&quot;&lt;/p&gt;" style="verticalAlign=top;align=left;overflow=fill;fontSize=12;fontFamily=Helvetica;html=1;fillColor=#f5f5f5;strokeColor=#666666;fontColor=#333333;" vertex="1" parent="1">
+          <mxGeometry x="-255" y="1060" width="160" height="90" as="geometry" />
+        </mxCell>
+        <mxCell id="mLFEw-IBUbFVCugntGrT-7" value="&lt;p style=&quot;margin:0px;margin-top:4px;text-align:center;text-decoration:underline;&quot;&gt;&lt;b&gt;Object:Grocery&lt;/b&gt;&lt;/p&gt;&lt;hr&gt;&lt;p style=&quot;margin:0px;margin-left:8px;&quot;&gt;Grocery = &quot;Bread Flour&quot;&lt;br&gt;Description = &quot;...&quot;&lt;/p&gt;&lt;p style=&quot;margin:0px;margin-left:8px;&quot;&gt;Unit = &quot;g&quot;&lt;/p&gt;" style="verticalAlign=top;align=left;overflow=fill;fontSize=12;fontFamily=Helvetica;html=1;fillColor=#f5f5f5;strokeColor=#666666;fontColor=#333333;" vertex="1" parent="1">
+          <mxGeometry x="-255" y="1160" width="160" height="90" as="geometry" />
+        </mxCell>
+        <mxCell id="mLFEw-IBUbFVCugntGrT-9" value="Common Grocery Definitions" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="-234" y="930" width="120" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="mLFEw-IBUbFVCugntGrT-10" value="" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;" vertex="1" parent="1">
+          <mxGeometry x="-65" y="930" width="190" height="340" as="geometry" />
+        </mxCell>
+        <mxCell id="mLFEw-IBUbFVCugntGrT-12" value="&lt;p style=&quot;margin:0px;margin-top:4px;text-align:center;text-decoration:underline;&quot;&gt;&lt;b&gt;Object:Grocery&lt;/b&gt;&lt;/p&gt;&lt;hr&gt;&lt;p style=&quot;margin:0px;margin-left:8px;&quot;&gt;Grocery = &quot;Whey Powder&quot;&lt;br&gt;Description = &quot;...&quot;&lt;/p&gt;&lt;p style=&quot;margin:0px;margin-left:8px;&quot;&gt;Unit = &quot;g&quot;&lt;/p&gt;" style="verticalAlign=top;align=left;overflow=fill;fontSize=12;fontFamily=Helvetica;html=1;fillColor=#f5f5f5;strokeColor=#666666;fontColor=#333333;" vertex="1" parent="1">
+          <mxGeometry x="-50" y="960" width="160" height="90" as="geometry" />
+        </mxCell>
+        <mxCell id="mLFEw-IBUbFVCugntGrT-13" value="&lt;p style=&quot;margin:0px;margin-top:4px;text-align:center;text-decoration:underline;&quot;&gt;&lt;b&gt;Object:Grocery&lt;/b&gt;&lt;/p&gt;&lt;hr&gt;&lt;p style=&quot;margin:0px;margin-left:8px;&quot;&gt;Grocery = &quot;Chicken Breast&quot;&lt;br&gt;Description = &quot;...&quot;&lt;/p&gt;&lt;p style=&quot;margin:0px;margin-left:8px;&quot;&gt;Unit = &quot;piece&quot;&lt;/p&gt;" style="verticalAlign=top;align=left;overflow=fill;fontSize=12;fontFamily=Helvetica;html=1;fillColor=#f5f5f5;strokeColor=#666666;fontColor=#333333;" vertex="1" parent="1">
+          <mxGeometry x="-50" y="1060" width="160" height="90" as="geometry" />
+        </mxCell>
+        <mxCell id="mLFEw-IBUbFVCugntGrT-18" value="Yurii&#39;s Kitchen Grocery Definitions" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="-37" y="930" width="134" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="mLFEw-IBUbFVCugntGrT-20" value="" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e1d5e7;strokeColor=#9673a6;" vertex="1" parent="1">
+          <mxGeometry x="145" y="930" width="190" height="340" as="geometry" />
+        </mxCell>
+        <mxCell id="mLFEw-IBUbFVCugntGrT-21" value="&lt;p style=&quot;margin:0px;margin-top:4px;text-align:center;text-decoration:underline;&quot;&gt;&lt;b&gt;Object:Grocery&lt;/b&gt;&lt;/p&gt;&lt;hr&gt;&lt;p style=&quot;margin:0px;margin-left:8px;&quot;&gt;Grocery = &quot;Tofu&quot;&lt;br&gt;Description = &quot;...&quot;&lt;/p&gt;&lt;p style=&quot;margin:0px;margin-left:8px;&quot;&gt;Unit = &quot;g&quot;&lt;/p&gt;" style="verticalAlign=top;align=left;overflow=fill;fontSize=12;fontFamily=Helvetica;html=1;fillColor=#f5f5f5;strokeColor=#666666;fontColor=#333333;" vertex="1" parent="1">
+          <mxGeometry x="160" y="960" width="160" height="90" as="geometry" />
+        </mxCell>
+        <mxCell id="mLFEw-IBUbFVCugntGrT-22" value="&lt;p style=&quot;margin:0px;margin-top:4px;text-align:center;text-decoration:underline;&quot;&gt;&lt;b&gt;Object:Grocery&lt;/b&gt;&lt;/p&gt;&lt;hr&gt;&lt;p style=&quot;margin:0px;margin-left:8px;&quot;&gt;Grocery = &quot;Yoghurt&quot;&lt;br&gt;Description = &quot;...&quot;&lt;/p&gt;&lt;p style=&quot;margin:0px;margin-left:8px;&quot;&gt;Unit = &quot;piece&quot;&lt;/p&gt;" style="verticalAlign=top;align=left;overflow=fill;fontSize=12;fontFamily=Helvetica;html=1;fillColor=#f5f5f5;strokeColor=#666666;fontColor=#333333;" vertex="1" parent="1">
+          <mxGeometry x="160" y="1060" width="160" height="90" as="geometry" />
+        </mxCell>
+        <mxCell id="mLFEw-IBUbFVCugntGrT-23" value="Felix&#39;s Kitchen Grocery Definitions" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="173" y="930" width="134" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="mLFEw-IBUbFVCugntGrT-24" value="&lt;p style=&quot;margin:0px;margin-top:4px;text-align:center;text-decoration:underline;&quot;&gt;&lt;b&gt;Object:Grocery&lt;/b&gt;&lt;/p&gt;&lt;hr&gt;&lt;p style=&quot;margin:0px;margin-left:8px;&quot;&gt;Grocery = &quot;Gram Bread&quot;&lt;br&gt;Description = &quot;...&quot;&lt;/p&gt;&lt;p style=&quot;margin:0px;margin-left:8px;&quot;&gt;Unit = &quot;g&quot;&lt;/p&gt;" style="verticalAlign=top;align=left;overflow=fill;fontSize=12;fontFamily=Helvetica;html=1;fillColor=#f5f5f5;strokeColor=#666666;fontColor=#333333;" vertex="1" parent="1">
+          <mxGeometry x="-50" y="1160" width="160" height="90" as="geometry" />
+        </mxCell>
+        <mxCell id="mLFEw-IBUbFVCugntGrT-25" value="&lt;p style=&quot;margin:0px;margin-top:4px;text-align:center;text-decoration:underline;&quot;&gt;&lt;b&gt;Object:Grocery&lt;/b&gt;&lt;/p&gt;&lt;hr&gt;&lt;p style=&quot;margin:0px;margin-left:8px;&quot;&gt;Grocery = &quot;Sliced Bread&quot;&lt;br&gt;Description = &quot;...&quot;&lt;/p&gt;&lt;p style=&quot;margin:0px;margin-left:8px;&quot;&gt;Unit = &quot;slice&quot;&lt;/p&gt;" style="verticalAlign=top;align=left;overflow=fill;fontSize=12;fontFamily=Helvetica;html=1;fillColor=#f5f5f5;strokeColor=#666666;fontColor=#333333;" vertex="1" parent="1">
+          <mxGeometry x="160" y="1160" width="160" height="90" as="geometry" />
+        </mxCell>
+        <mxCell id="mLFEw-IBUbFVCugntGrT-26" value="" style="shape=waypoint;sketch=0;fillStyle=solid;size=6;pointerEvents=1;points=[];fillColor=none;resizable=0;rotatable=0;perimeter=centerPerimeter;snapToPoint=1;" vertex="1" parent="1">
+          <mxGeometry x="345" y="1100" width="40" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="mLFEw-IBUbFVCugntGrT-27" value="" style="shape=waypoint;sketch=0;fillStyle=solid;size=6;pointerEvents=1;points=[];fillColor=none;resizable=0;rotatable=0;perimeter=centerPerimeter;snapToPoint=1;" vertex="1" parent="1">
+          <mxGeometry x="365" y="1100" width="40" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="mLFEw-IBUbFVCugntGrT-28" value="" style="shape=waypoint;sketch=0;fillStyle=solid;size=6;pointerEvents=1;points=[];fillColor=none;resizable=0;rotatable=0;perimeter=centerPerimeter;snapToPoint=1;" vertex="1" parent="1">
+          <mxGeometry x="385" y="1100" width="40" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="mLFEw-IBUbFVCugntGrT-30" value="Grocery Definitions" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="20" y="890" width="140" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="mLFEw-IBUbFVCugntGrT-31" value="" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f5f5f5;fontColor=#333333;strokeColor=#666666;" vertex="1" parent="1">
+          <mxGeometry x="-290" y="1340" width="350" height="360" as="geometry" />
+        </mxCell>
+        <mxCell id="mLFEw-IBUbFVCugntGrT-32" value="" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f5f5f5;fontColor=#333333;strokeColor=#666666;" vertex="1" parent="1">
+          <mxGeometry x="80" y="1340" width="350" height="360" as="geometry" />
+        </mxCell>
+        <mxCell id="mLFEw-IBUbFVCugntGrT-33" value="Grocery Definitions Visible to Members of Yurii&#39;s Kitchen" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="-205" y="1350" width="180" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="mLFEw-IBUbFVCugntGrT-34" value="Grocery Definitions Visible to Members of Felix&#39;s Kitchen" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="165" y="1350" width="180" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="mLFEw-IBUbFVCugntGrT-35" value="" style="endArrow=classic;html=1;rounded=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;exitX=0.5;exitY=1;exitDx=0;exitDy=0;" edge="1" parent="1" source="mLFEw-IBUbFVCugntGrT-20" target="mLFEw-IBUbFVCugntGrT-32">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="100" y="1310" as="sourcePoint" />
+            <mxPoint x="150" y="1260" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="mLFEw-IBUbFVCugntGrT-37" value="" style="endArrow=classic;html=1;rounded=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;exitX=0.5;exitY=1;exitDx=0;exitDy=0;" edge="1" parent="1" source="mLFEw-IBUbFVCugntGrT-8" target="mLFEw-IBUbFVCugntGrT-32">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="100" y="1310" as="sourcePoint" />
+            <mxPoint x="150" y="1260" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="mLFEw-IBUbFVCugntGrT-38" value="" style="endArrow=classic;html=1;rounded=0;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="mLFEw-IBUbFVCugntGrT-10" target="mLFEw-IBUbFVCugntGrT-31">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="100" y="1310" as="sourcePoint" />
+            <mxPoint x="150" y="1260" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="mLFEw-IBUbFVCugntGrT-39" value="" style="endArrow=classic;html=1;rounded=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;exitX=0.5;exitY=1;exitDx=0;exitDy=0;" edge="1" parent="1" source="mLFEw-IBUbFVCugntGrT-8" target="mLFEw-IBUbFVCugntGrT-31">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="100" y="1310" as="sourcePoint" />
+            <mxPoint x="150" y="1260" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="mLFEw-IBUbFVCugntGrT-45" value="" style="group" connectable="0" vertex="1" parent="1">
+          <mxGeometry x="-270" y="1390" width="150" height="280" as="geometry" />
+        </mxCell>
+        <mxCell id="mLFEw-IBUbFVCugntGrT-41" value="&lt;p style=&quot;margin:0px;margin-top:4px;text-align:center;text-decoration:underline;&quot;&gt;&lt;b&gt;Object:Grocery&lt;/b&gt;&lt;/p&gt;&lt;hr&gt;&lt;p style=&quot;margin:0px;margin-left:8px;&quot;&gt;Grocery = &quot;Bread&quot;&lt;br&gt;Description = &quot;...&quot;&lt;/p&gt;&lt;p style=&quot;margin:0px;margin-left:8px;&quot;&gt;Unit = &quot;loaf&quot;&lt;/p&gt;" style="verticalAlign=top;align=left;overflow=fill;fontSize=12;fontFamily=Helvetica;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" vertex="1" parent="mLFEw-IBUbFVCugntGrT-45">
+          <mxGeometry x="11.842105263157896" y="24.705882352941174" width="126.31578947368422" height="74.11764705882352" as="geometry" />
+        </mxCell>
+        <mxCell id="mLFEw-IBUbFVCugntGrT-42" value="&lt;p style=&quot;margin:0px;margin-top:4px;text-align:center;text-decoration:underline;&quot;&gt;&lt;b&gt;Object:Grocery&lt;/b&gt;&lt;/p&gt;&lt;hr&gt;&lt;p style=&quot;margin:0px;margin-left:8px;&quot;&gt;Grocery = &quot;Swiss Cheese&quot;&lt;br&gt;Description = &quot;...&quot;&lt;/p&gt;&lt;p style=&quot;margin:0px;margin-left:8px;&quot;&gt;Unit = &quot;g&quot;&lt;/p&gt;" style="verticalAlign=top;align=left;overflow=fill;fontSize=12;fontFamily=Helvetica;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" vertex="1" parent="mLFEw-IBUbFVCugntGrT-45">
+          <mxGeometry x="11.842105263157896" y="107.05882352941175" width="126.31578947368422" height="74.11764705882352" as="geometry" />
+        </mxCell>
+        <mxCell id="mLFEw-IBUbFVCugntGrT-43" value="&lt;p style=&quot;margin:0px;margin-top:4px;text-align:center;text-decoration:underline;&quot;&gt;&lt;b&gt;Object:Grocery&lt;/b&gt;&lt;/p&gt;&lt;hr&gt;&lt;p style=&quot;margin:0px;margin-left:8px;&quot;&gt;Grocery = &quot;Bread Flour&quot;&lt;br&gt;Description = &quot;...&quot;&lt;/p&gt;&lt;p style=&quot;margin:0px;margin-left:8px;&quot;&gt;Unit = &quot;g&quot;&lt;/p&gt;" style="verticalAlign=top;align=left;overflow=fill;fontSize=12;fontFamily=Helvetica;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" vertex="1" parent="mLFEw-IBUbFVCugntGrT-45">
+          <mxGeometry x="11.842105263157896" y="189.41176470588232" width="126.31578947368422" height="74.11764705882352" as="geometry" />
+        </mxCell>
+        <mxCell id="mLFEw-IBUbFVCugntGrT-51" value="" style="group" connectable="0" vertex="1" parent="1">
+          <mxGeometry x="-110" y="1390" width="150" height="280" as="geometry" />
+        </mxCell>
+        <mxCell id="mLFEw-IBUbFVCugntGrT-47" value="&lt;p style=&quot;margin:0px;margin-top:4px;text-align:center;text-decoration:underline;&quot;&gt;&lt;b&gt;Object:Grocery&lt;/b&gt;&lt;/p&gt;&lt;hr&gt;&lt;p style=&quot;margin:0px;margin-left:8px;&quot;&gt;Grocery = &quot;Whey Powder&quot;&lt;br&gt;Description = &quot;...&quot;&lt;/p&gt;&lt;p style=&quot;margin:0px;margin-left:8px;&quot;&gt;Unit = &quot;g&quot;&lt;/p&gt;" style="verticalAlign=top;align=left;overflow=fill;fontSize=12;fontFamily=Helvetica;html=1;fillColor=#d5e8d4;strokeColor=#82b366;" vertex="1" parent="mLFEw-IBUbFVCugntGrT-51">
+          <mxGeometry x="11.842105263157896" y="24.705882352941174" width="126.3157894736842" height="74.11764705882354" as="geometry" />
+        </mxCell>
+        <mxCell id="mLFEw-IBUbFVCugntGrT-48" value="&lt;p style=&quot;margin:0px;margin-top:4px;text-align:center;text-decoration:underline;&quot;&gt;&lt;b&gt;Object:Grocery&lt;/b&gt;&lt;/p&gt;&lt;hr&gt;&lt;p style=&quot;margin:0px;margin-left:8px;&quot;&gt;Grocery = &quot;Chicken Breast&quot;&lt;br&gt;Description = &quot;...&quot;&lt;/p&gt;&lt;p style=&quot;margin:0px;margin-left:8px;&quot;&gt;Unit = &quot;piece&quot;&lt;/p&gt;" style="verticalAlign=top;align=left;overflow=fill;fontSize=12;fontFamily=Helvetica;html=1;fillColor=#d5e8d4;strokeColor=#82b366;" vertex="1" parent="mLFEw-IBUbFVCugntGrT-51">
+          <mxGeometry x="11.842105263157896" y="107.05882352941177" width="126.3157894736842" height="74.11764705882354" as="geometry" />
+        </mxCell>
+        <mxCell id="mLFEw-IBUbFVCugntGrT-50" value="&lt;p style=&quot;margin:0px;margin-top:4px;text-align:center;text-decoration:underline;&quot;&gt;&lt;b&gt;Object:Grocery&lt;/b&gt;&lt;/p&gt;&lt;hr&gt;&lt;p style=&quot;margin:0px;margin-left:8px;&quot;&gt;Grocery = &quot;Gram Bread&quot;&lt;br&gt;Description = &quot;...&quot;&lt;/p&gt;&lt;p style=&quot;margin:0px;margin-left:8px;&quot;&gt;Unit = &quot;g&quot;&lt;/p&gt;" style="verticalAlign=top;align=left;overflow=fill;fontSize=12;fontFamily=Helvetica;html=1;fillColor=#d5e8d4;strokeColor=#82b366;" vertex="1" parent="mLFEw-IBUbFVCugntGrT-51">
+          <mxGeometry x="11.842105263157896" y="189.41176470588238" width="126.3157894736842" height="74.11764705882354" as="geometry" />
+        </mxCell>
+        <mxCell id="mLFEw-IBUbFVCugntGrT-52" value="" style="group" connectable="0" vertex="1" parent="1">
+          <mxGeometry x="110" y="1390" width="150" height="280" as="geometry" />
+        </mxCell>
+        <mxCell id="mLFEw-IBUbFVCugntGrT-53" value="&lt;p style=&quot;margin:0px;margin-top:4px;text-align:center;text-decoration:underline;&quot;&gt;&lt;b&gt;Object:Grocery&lt;/b&gt;&lt;/p&gt;&lt;hr&gt;&lt;p style=&quot;margin:0px;margin-left:8px;&quot;&gt;Grocery = &quot;Bread&quot;&lt;br&gt;Description = &quot;...&quot;&lt;/p&gt;&lt;p style=&quot;margin:0px;margin-left:8px;&quot;&gt;Unit = &quot;loaf&quot;&lt;/p&gt;" style="verticalAlign=top;align=left;overflow=fill;fontSize=12;fontFamily=Helvetica;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" vertex="1" parent="mLFEw-IBUbFVCugntGrT-52">
+          <mxGeometry x="11.842105263157896" y="24.705882352941174" width="126.31578947368422" height="74.11764705882352" as="geometry" />
+        </mxCell>
+        <mxCell id="mLFEw-IBUbFVCugntGrT-54" value="&lt;p style=&quot;margin:0px;margin-top:4px;text-align:center;text-decoration:underline;&quot;&gt;&lt;b&gt;Object:Grocery&lt;/b&gt;&lt;/p&gt;&lt;hr&gt;&lt;p style=&quot;margin:0px;margin-left:8px;&quot;&gt;Grocery = &quot;Swiss Cheese&quot;&lt;br&gt;Description = &quot;...&quot;&lt;/p&gt;&lt;p style=&quot;margin:0px;margin-left:8px;&quot;&gt;Unit = &quot;g&quot;&lt;/p&gt;" style="verticalAlign=top;align=left;overflow=fill;fontSize=12;fontFamily=Helvetica;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" vertex="1" parent="mLFEw-IBUbFVCugntGrT-52">
+          <mxGeometry x="11.842105263157896" y="107.05882352941175" width="126.31578947368422" height="74.11764705882352" as="geometry" />
+        </mxCell>
+        <mxCell id="mLFEw-IBUbFVCugntGrT-55" value="&lt;p style=&quot;margin:0px;margin-top:4px;text-align:center;text-decoration:underline;&quot;&gt;&lt;b&gt;Object:Grocery&lt;/b&gt;&lt;/p&gt;&lt;hr&gt;&lt;p style=&quot;margin:0px;margin-left:8px;&quot;&gt;Grocery = &quot;Bread Flour&quot;&lt;br&gt;Description = &quot;...&quot;&lt;/p&gt;&lt;p style=&quot;margin:0px;margin-left:8px;&quot;&gt;Unit = &quot;g&quot;&lt;/p&gt;" style="verticalAlign=top;align=left;overflow=fill;fontSize=12;fontFamily=Helvetica;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" vertex="1" parent="mLFEw-IBUbFVCugntGrT-52">
+          <mxGeometry x="11.842105263157896" y="189.41176470588232" width="126.31578947368422" height="74.11764705882352" as="geometry" />
+        </mxCell>
+        <mxCell id="mLFEw-IBUbFVCugntGrT-59" value="" style="group" connectable="0" vertex="1" parent="1">
+          <mxGeometry x="270" y="1410" width="130" height="250" as="geometry" />
+        </mxCell>
+        <mxCell id="mLFEw-IBUbFVCugntGrT-56" value="&lt;p style=&quot;margin:0px;margin-top:4px;text-align:center;text-decoration:underline;&quot;&gt;&lt;b&gt;Object:Grocery&lt;/b&gt;&lt;/p&gt;&lt;hr&gt;&lt;p style=&quot;margin:0px;margin-left:8px;&quot;&gt;Grocery = &quot;Tofu&quot;&lt;br&gt;Description = &quot;...&quot;&lt;/p&gt;&lt;p style=&quot;margin:0px;margin-left:8px;&quot;&gt;Unit = &quot;g&quot;&lt;/p&gt;" style="verticalAlign=top;align=left;overflow=fill;fontSize=12;fontFamily=Helvetica;html=1;fillColor=#e1d5e7;strokeColor=#9673a6;" vertex="1" parent="mLFEw-IBUbFVCugntGrT-59">
+          <mxGeometry width="130" height="77.58620689655172" as="geometry" />
+        </mxCell>
+        <mxCell id="mLFEw-IBUbFVCugntGrT-57" value="&lt;p style=&quot;margin:0px;margin-top:4px;text-align:center;text-decoration:underline;&quot;&gt;&lt;b&gt;Object:Grocery&lt;/b&gt;&lt;/p&gt;&lt;hr&gt;&lt;p style=&quot;margin:0px;margin-left:8px;&quot;&gt;Grocery = &quot;Yoghurt&quot;&lt;br&gt;Description = &quot;...&quot;&lt;/p&gt;&lt;p style=&quot;margin:0px;margin-left:8px;&quot;&gt;Unit = &quot;piece&quot;&lt;/p&gt;" style="verticalAlign=top;align=left;overflow=fill;fontSize=12;fontFamily=Helvetica;html=1;fillColor=#e1d5e7;strokeColor=#9673a6;" vertex="1" parent="mLFEw-IBUbFVCugntGrT-59">
+          <mxGeometry y="86.20689655172413" width="130" height="77.58620689655172" as="geometry" />
+        </mxCell>
+        <mxCell id="mLFEw-IBUbFVCugntGrT-58" value="&lt;p style=&quot;margin:0px;margin-top:4px;text-align:center;text-decoration:underline;&quot;&gt;&lt;b&gt;Object:Grocery&lt;/b&gt;&lt;/p&gt;&lt;hr&gt;&lt;p style=&quot;margin:0px;margin-left:8px;&quot;&gt;Grocery = &quot;Sliced Bread&quot;&lt;br&gt;Description = &quot;...&quot;&lt;/p&gt;&lt;p style=&quot;margin:0px;margin-left:8px;&quot;&gt;Unit = &quot;slice&quot;&lt;/p&gt;" style="verticalAlign=top;align=left;overflow=fill;fontSize=12;fontFamily=Helvetica;html=1;fillColor=#e1d5e7;strokeColor=#9673a6;" vertex="1" parent="mLFEw-IBUbFVCugntGrT-59">
+          <mxGeometry y="172.41379310344826" width="130" height="77.58620689655172" as="geometry" />
+        </mxCell>
+        <mxCell id="mLFEw-IBUbFVCugntGrT-60" value="Dynamic Common Groceries" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=14;fontStyle=1" vertex="1" parent="1">
+          <mxGeometry x="-25" y="850" width="205" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="mLFEw-IBUbFVCugntGrT-61" value="" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f5f5f5;fontColor=#333333;strokeColor=#666666;" vertex="1" parent="1">
+          <mxGeometry x="460" y="890" width="720" height="400" as="geometry" />
+        </mxCell>
+        <mxCell id="mLFEw-IBUbFVCugntGrT-62" value="" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" vertex="1" parent="1">
+          <mxGeometry x="480" y="930" width="190" height="340" as="geometry" />
+        </mxCell>
+        <mxCell id="mLFEw-IBUbFVCugntGrT-63" value="&lt;p style=&quot;margin:0px;margin-top:4px;text-align:center;text-decoration:underline;&quot;&gt;&lt;b&gt;Object:Grocery&lt;/b&gt;&lt;/p&gt;&lt;hr&gt;&lt;p style=&quot;margin:0px;margin-left:8px;&quot;&gt;Grocery = &quot;Bread&quot;&lt;br&gt;Description = &quot;...&quot;&lt;/p&gt;&lt;p style=&quot;margin:0px;margin-left:8px;&quot;&gt;Unit = &quot;loaf&quot;&lt;/p&gt;" style="verticalAlign=top;align=left;overflow=fill;fontSize=12;fontFamily=Helvetica;html=1;fillColor=#f5f5f5;strokeColor=#666666;fontColor=#333333;" vertex="1" parent="1">
+          <mxGeometry x="495" y="960" width="160" height="90" as="geometry" />
+        </mxCell>
+        <mxCell id="mLFEw-IBUbFVCugntGrT-64" value="&lt;p style=&quot;margin:0px;margin-top:4px;text-align:center;text-decoration:underline;&quot;&gt;&lt;b&gt;Object:Grocery&lt;/b&gt;&lt;/p&gt;&lt;hr&gt;&lt;p style=&quot;margin:0px;margin-left:8px;&quot;&gt;Grocery = &quot;Swiss Cheese&quot;&lt;br&gt;Description = &quot;...&quot;&lt;/p&gt;&lt;p style=&quot;margin:0px;margin-left:8px;&quot;&gt;Unit = &quot;g&quot;&lt;/p&gt;" style="verticalAlign=top;align=left;overflow=fill;fontSize=12;fontFamily=Helvetica;html=1;fillColor=#f5f5f5;strokeColor=#666666;fontColor=#333333;" vertex="1" parent="1">
+          <mxGeometry x="495" y="1060" width="160" height="90" as="geometry" />
+        </mxCell>
+        <mxCell id="mLFEw-IBUbFVCugntGrT-65" value="&lt;p style=&quot;margin:0px;margin-top:4px;text-align:center;text-decoration:underline;&quot;&gt;&lt;b&gt;Object:Grocery&lt;/b&gt;&lt;/p&gt;&lt;hr&gt;&lt;p style=&quot;margin:0px;margin-left:8px;&quot;&gt;Grocery = &quot;Bread Flour&quot;&lt;br&gt;Description = &quot;...&quot;&lt;/p&gt;&lt;p style=&quot;margin:0px;margin-left:8px;&quot;&gt;Unit = &quot;g&quot;&lt;/p&gt;" style="verticalAlign=top;align=left;overflow=fill;fontSize=12;fontFamily=Helvetica;html=1;fillColor=#f5f5f5;strokeColor=#666666;fontColor=#333333;" vertex="1" parent="1">
+          <mxGeometry x="495" y="1160" width="160" height="90" as="geometry" />
+        </mxCell>
+        <mxCell id="mLFEw-IBUbFVCugntGrT-66" value="Common Grocery Definitions" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="516" y="930" width="120" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="mLFEw-IBUbFVCugntGrT-67" value="" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;" vertex="1" parent="1">
+          <mxGeometry x="685" y="930" width="190" height="340" as="geometry" />
+        </mxCell>
+        <mxCell id="mLFEw-IBUbFVCugntGrT-68" value="&lt;p style=&quot;margin:0px;margin-top:4px;text-align:center;text-decoration:underline;&quot;&gt;&lt;b&gt;Object:Grocery&lt;/b&gt;&lt;/p&gt;&lt;hr&gt;&lt;p style=&quot;margin:0px;margin-left:8px;&quot;&gt;Grocery = &quot;Whey Powder&quot;&lt;br&gt;Description = &quot;...&quot;&lt;/p&gt;&lt;p style=&quot;margin:0px;margin-left:8px;&quot;&gt;Unit = &quot;g&quot;&lt;/p&gt;" style="verticalAlign=top;align=left;overflow=fill;fontSize=12;fontFamily=Helvetica;html=1;fillColor=#f5f5f5;strokeColor=#666666;fontColor=#333333;" vertex="1" parent="1">
+          <mxGeometry x="700" y="960" width="160" height="90" as="geometry" />
+        </mxCell>
+        <mxCell id="mLFEw-IBUbFVCugntGrT-69" value="&lt;p style=&quot;margin:0px;margin-top:4px;text-align:center;text-decoration:underline;&quot;&gt;&lt;b&gt;Object:Grocery&lt;/b&gt;&lt;/p&gt;&lt;hr&gt;&lt;p style=&quot;margin:0px;margin-left:8px;&quot;&gt;Grocery = &quot;Chicken Breast&quot;&lt;br&gt;Description = &quot;...&quot;&lt;/p&gt;&lt;p style=&quot;margin:0px;margin-left:8px;&quot;&gt;Unit = &quot;piece&quot;&lt;/p&gt;" style="verticalAlign=top;align=left;overflow=fill;fontSize=12;fontFamily=Helvetica;html=1;fillColor=#f5f5f5;strokeColor=#666666;fontColor=#333333;" vertex="1" parent="1">
+          <mxGeometry x="700" y="1060" width="160" height="90" as="geometry" />
+        </mxCell>
+        <mxCell id="mLFEw-IBUbFVCugntGrT-70" value="Yurii&#39;s Kitchen Grocery Definitions" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="713" y="930" width="134" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="mLFEw-IBUbFVCugntGrT-71" value="" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e1d5e7;strokeColor=#9673a6;" vertex="1" parent="1">
+          <mxGeometry x="895" y="930" width="190" height="340" as="geometry" />
+        </mxCell>
+        <mxCell id="mLFEw-IBUbFVCugntGrT-72" value="&lt;p style=&quot;margin:0px;margin-top:4px;text-align:center;text-decoration:underline;&quot;&gt;&lt;b&gt;Object:Grocery&lt;/b&gt;&lt;/p&gt;&lt;hr&gt;&lt;p style=&quot;margin:0px;margin-left:8px;&quot;&gt;Grocery = &quot;Tofu&quot;&lt;br&gt;Description = &quot;...&quot;&lt;/p&gt;&lt;p style=&quot;margin:0px;margin-left:8px;&quot;&gt;Unit = &quot;g&quot;&lt;/p&gt;" style="verticalAlign=top;align=left;overflow=fill;fontSize=12;fontFamily=Helvetica;html=1;fillColor=#f5f5f5;strokeColor=#666666;fontColor=#333333;" vertex="1" parent="1">
+          <mxGeometry x="910" y="960" width="160" height="90" as="geometry" />
+        </mxCell>
+        <mxCell id="mLFEw-IBUbFVCugntGrT-73" value="&lt;p style=&quot;margin:0px;margin-top:4px;text-align:center;text-decoration:underline;&quot;&gt;&lt;b&gt;Object:Grocery&lt;/b&gt;&lt;/p&gt;&lt;hr&gt;&lt;p style=&quot;margin:0px;margin-left:8px;&quot;&gt;Grocery = &quot;Yoghurt&quot;&lt;br&gt;Description = &quot;...&quot;&lt;/p&gt;&lt;p style=&quot;margin:0px;margin-left:8px;&quot;&gt;Unit = &quot;piece&quot;&lt;/p&gt;" style="verticalAlign=top;align=left;overflow=fill;fontSize=12;fontFamily=Helvetica;html=1;fillColor=#f5f5f5;strokeColor=#666666;fontColor=#333333;" vertex="1" parent="1">
+          <mxGeometry x="910" y="1060" width="160" height="90" as="geometry" />
+        </mxCell>
+        <mxCell id="mLFEw-IBUbFVCugntGrT-74" value="Felix&#39;s Kitchen Grocery Definitions" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="923" y="930" width="134" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="mLFEw-IBUbFVCugntGrT-75" value="&lt;p style=&quot;margin:0px;margin-top:4px;text-align:center;text-decoration:underline;&quot;&gt;&lt;b&gt;Object:Grocery&lt;/b&gt;&lt;/p&gt;&lt;hr&gt;&lt;p style=&quot;margin:0px;margin-left:8px;&quot;&gt;Grocery = &quot;Gram Bread&quot;&lt;br&gt;Description = &quot;...&quot;&lt;/p&gt;&lt;p style=&quot;margin:0px;margin-left:8px;&quot;&gt;Unit = &quot;g&quot;&lt;/p&gt;" style="verticalAlign=top;align=left;overflow=fill;fontSize=12;fontFamily=Helvetica;html=1;fillColor=#f5f5f5;strokeColor=#666666;fontColor=#333333;" vertex="1" parent="1">
+          <mxGeometry x="700" y="1160" width="160" height="90" as="geometry" />
+        </mxCell>
+        <mxCell id="mLFEw-IBUbFVCugntGrT-76" value="&lt;p style=&quot;margin:0px;margin-top:4px;text-align:center;text-decoration:underline;&quot;&gt;&lt;b&gt;Object:Grocery&lt;/b&gt;&lt;/p&gt;&lt;hr&gt;&lt;p style=&quot;margin:0px;margin-left:8px;&quot;&gt;Grocery = &quot;Sliced Bread&quot;&lt;br&gt;Description = &quot;...&quot;&lt;/p&gt;&lt;p style=&quot;margin:0px;margin-left:8px;&quot;&gt;Unit = &quot;slice&quot;&lt;/p&gt;" style="verticalAlign=top;align=left;overflow=fill;fontSize=12;fontFamily=Helvetica;html=1;fillColor=#f5f5f5;strokeColor=#666666;fontColor=#333333;" vertex="1" parent="1">
+          <mxGeometry x="910" y="1160" width="160" height="90" as="geometry" />
+        </mxCell>
+        <mxCell id="mLFEw-IBUbFVCugntGrT-77" value="" style="shape=waypoint;sketch=0;fillStyle=solid;size=6;pointerEvents=1;points=[];fillColor=none;resizable=0;rotatable=0;perimeter=centerPerimeter;snapToPoint=1;" vertex="1" parent="1">
+          <mxGeometry x="1095" y="1100" width="40" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="mLFEw-IBUbFVCugntGrT-78" value="" style="shape=waypoint;sketch=0;fillStyle=solid;size=6;pointerEvents=1;points=[];fillColor=none;resizable=0;rotatable=0;perimeter=centerPerimeter;snapToPoint=1;" vertex="1" parent="1">
+          <mxGeometry x="1115" y="1100" width="40" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="mLFEw-IBUbFVCugntGrT-79" value="" style="shape=waypoint;sketch=0;fillStyle=solid;size=6;pointerEvents=1;points=[];fillColor=none;resizable=0;rotatable=0;perimeter=centerPerimeter;snapToPoint=1;" vertex="1" parent="1">
+          <mxGeometry x="1135" y="1100" width="40" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="mLFEw-IBUbFVCugntGrT-80" value="Grocery Definitions" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="770" y="890" width="140" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="mLFEw-IBUbFVCugntGrT-81" value="" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f5f5f5;fontColor=#333333;strokeColor=#666666;" vertex="1" parent="1">
+          <mxGeometry x="460" y="1340" width="350" height="360" as="geometry" />
+        </mxCell>
+        <mxCell id="mLFEw-IBUbFVCugntGrT-82" value="" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f5f5f5;fontColor=#333333;strokeColor=#666666;" vertex="1" parent="1">
+          <mxGeometry x="830" y="1340" width="350" height="360" as="geometry" />
+        </mxCell>
+        <mxCell id="mLFEw-IBUbFVCugntGrT-83" value="Grocery Definitions Visible to Members of Yurii&#39;s Kitchen" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="545" y="1350" width="180" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="mLFEw-IBUbFVCugntGrT-84" value="Grocery Definitions Visible to Members of Felix&#39;s Kitchen" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="915" y="1350" width="180" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="mLFEw-IBUbFVCugntGrT-85" value="" style="endArrow=classic;html=1;rounded=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;exitX=0.5;exitY=1;exitDx=0;exitDy=0;" edge="1" parent="1" source="mLFEw-IBUbFVCugntGrT-71" target="mLFEw-IBUbFVCugntGrT-82">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="850" y="1310" as="sourcePoint" />
+            <mxPoint x="900" y="1260" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="mLFEw-IBUbFVCugntGrT-86" value="" style="endArrow=classic;html=1;rounded=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;exitX=0.5;exitY=1;exitDx=0;exitDy=0;" edge="1" parent="1" source="mLFEw-IBUbFVCugntGrT-62" target="mLFEw-IBUbFVCugntGrT-82">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="850" y="1310" as="sourcePoint" />
+            <mxPoint x="900" y="1260" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="mLFEw-IBUbFVCugntGrT-87" value="" style="endArrow=classic;html=1;rounded=0;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="mLFEw-IBUbFVCugntGrT-67" target="mLFEw-IBUbFVCugntGrT-81">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="850" y="1310" as="sourcePoint" />
+            <mxPoint x="900" y="1260" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="mLFEw-IBUbFVCugntGrT-88" value="" style="endArrow=classic;html=1;rounded=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;exitX=0.5;exitY=1;exitDx=0;exitDy=0;" edge="1" parent="1" source="mLFEw-IBUbFVCugntGrT-62" target="mLFEw-IBUbFVCugntGrT-81">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="850" y="1310" as="sourcePoint" />
+            <mxPoint x="900" y="1260" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="mLFEw-IBUbFVCugntGrT-89" value="" style="group" connectable="0" vertex="1" parent="1">
+          <mxGeometry x="480" y="1390" width="150" height="280" as="geometry" />
+        </mxCell>
+        <mxCell id="mLFEw-IBUbFVCugntGrT-90" value="&lt;p style=&quot;margin:0px;margin-top:4px;text-align:center;text-decoration:underline;&quot;&gt;&lt;b&gt;Object:Grocery&lt;/b&gt;&lt;/p&gt;&lt;hr&gt;&lt;p style=&quot;margin:0px;margin-left:8px;&quot;&gt;Grocery = &quot;Bread&quot;&lt;br&gt;Description = &quot;...&quot;&lt;/p&gt;&lt;p style=&quot;margin:0px;margin-left:8px;&quot;&gt;Unit = &quot;loaf&quot;&lt;/p&gt;" style="verticalAlign=top;align=left;overflow=fill;fontSize=12;fontFamily=Helvetica;html=1;fillColor=#d5e8d4;strokeColor=#82b366;" vertex="1" parent="mLFEw-IBUbFVCugntGrT-89">
+          <mxGeometry x="11.842105263157896" y="24.705882352941174" width="126.31578947368422" height="74.11764705882352" as="geometry" />
+        </mxCell>
+        <mxCell id="mLFEw-IBUbFVCugntGrT-91" value="&lt;p style=&quot;margin:0px;margin-top:4px;text-align:center;text-decoration:underline;&quot;&gt;&lt;b&gt;Object:Grocery&lt;/b&gt;&lt;/p&gt;&lt;hr&gt;&lt;p style=&quot;margin:0px;margin-left:8px;&quot;&gt;Grocery = &quot;Swiss Cheese&quot;&lt;br&gt;Description = &quot;...&quot;&lt;/p&gt;&lt;p style=&quot;margin:0px;margin-left:8px;&quot;&gt;Unit = &quot;g&quot;&lt;/p&gt;" style="verticalAlign=top;align=left;overflow=fill;fontSize=12;fontFamily=Helvetica;html=1;fillColor=#d5e8d4;strokeColor=#82b366;" vertex="1" parent="mLFEw-IBUbFVCugntGrT-89">
+          <mxGeometry x="11.842105263157896" y="107.05882352941175" width="126.31578947368422" height="74.11764705882352" as="geometry" />
+        </mxCell>
+        <mxCell id="mLFEw-IBUbFVCugntGrT-92" value="&lt;p style=&quot;margin:0px;margin-top:4px;text-align:center;text-decoration:underline;&quot;&gt;&lt;b&gt;Object:Grocery&lt;/b&gt;&lt;/p&gt;&lt;hr&gt;&lt;p style=&quot;margin:0px;margin-left:8px;&quot;&gt;Grocery = &quot;Bread Flour&quot;&lt;br&gt;Description = &quot;...&quot;&lt;/p&gt;&lt;p style=&quot;margin:0px;margin-left:8px;&quot;&gt;Unit = &quot;g&quot;&lt;/p&gt;" style="verticalAlign=top;align=left;overflow=fill;fontSize=12;fontFamily=Helvetica;html=1;fillColor=#d5e8d4;strokeColor=#82b366;" vertex="1" parent="mLFEw-IBUbFVCugntGrT-89">
+          <mxGeometry x="11.842105263157896" y="189.41176470588232" width="126.31578947368422" height="74.11764705882352" as="geometry" />
+        </mxCell>
+        <mxCell id="mLFEw-IBUbFVCugntGrT-93" value="" style="group" connectable="0" vertex="1" parent="1">
+          <mxGeometry x="640" y="1390" width="150" height="280" as="geometry" />
+        </mxCell>
+        <mxCell id="mLFEw-IBUbFVCugntGrT-94" value="&lt;p style=&quot;margin:0px;margin-top:4px;text-align:center;text-decoration:underline;&quot;&gt;&lt;b&gt;Object:Grocery&lt;/b&gt;&lt;/p&gt;&lt;hr&gt;&lt;p style=&quot;margin:0px;margin-left:8px;&quot;&gt;Grocery = &quot;Whey Powder&quot;&lt;br&gt;Description = &quot;...&quot;&lt;/p&gt;&lt;p style=&quot;margin:0px;margin-left:8px;&quot;&gt;Unit = &quot;g&quot;&lt;/p&gt;" style="verticalAlign=top;align=left;overflow=fill;fontSize=12;fontFamily=Helvetica;html=1;fillColor=#d5e8d4;strokeColor=#82b366;" vertex="1" parent="mLFEw-IBUbFVCugntGrT-93">
+          <mxGeometry x="11.842105263157896" y="24.705882352941174" width="126.3157894736842" height="74.11764705882354" as="geometry" />
+        </mxCell>
+        <mxCell id="mLFEw-IBUbFVCugntGrT-95" value="&lt;p style=&quot;margin:0px;margin-top:4px;text-align:center;text-decoration:underline;&quot;&gt;&lt;b&gt;Object:Grocery&lt;/b&gt;&lt;/p&gt;&lt;hr&gt;&lt;p style=&quot;margin:0px;margin-left:8px;&quot;&gt;Grocery = &quot;Chicken Breast&quot;&lt;br&gt;Description = &quot;...&quot;&lt;/p&gt;&lt;p style=&quot;margin:0px;margin-left:8px;&quot;&gt;Unit = &quot;piece&quot;&lt;/p&gt;" style="verticalAlign=top;align=left;overflow=fill;fontSize=12;fontFamily=Helvetica;html=1;fillColor=#d5e8d4;strokeColor=#82b366;" vertex="1" parent="mLFEw-IBUbFVCugntGrT-93">
+          <mxGeometry x="11.842105263157896" y="107.05882352941177" width="126.3157894736842" height="74.11764705882354" as="geometry" />
+        </mxCell>
+        <mxCell id="mLFEw-IBUbFVCugntGrT-96" value="&lt;p style=&quot;margin:0px;margin-top:4px;text-align:center;text-decoration:underline;&quot;&gt;&lt;b&gt;Object:Grocery&lt;/b&gt;&lt;/p&gt;&lt;hr&gt;&lt;p style=&quot;margin:0px;margin-left:8px;&quot;&gt;Grocery = &quot;Gram Bread&quot;&lt;br&gt;Description = &quot;...&quot;&lt;/p&gt;&lt;p style=&quot;margin:0px;margin-left:8px;&quot;&gt;Unit = &quot;g&quot;&lt;/p&gt;" style="verticalAlign=top;align=left;overflow=fill;fontSize=12;fontFamily=Helvetica;html=1;fillColor=#d5e8d4;strokeColor=#82b366;" vertex="1" parent="mLFEw-IBUbFVCugntGrT-93">
+          <mxGeometry x="11.842105263157896" y="189.41176470588238" width="126.3157894736842" height="74.11764705882354" as="geometry" />
+        </mxCell>
+        <mxCell id="mLFEw-IBUbFVCugntGrT-101" value="" style="group" connectable="0" vertex="1" parent="1">
+          <mxGeometry x="1020" y="1410" width="130" height="250" as="geometry" />
+        </mxCell>
+        <mxCell id="mLFEw-IBUbFVCugntGrT-102" value="&lt;p style=&quot;margin:0px;margin-top:4px;text-align:center;text-decoration:underline;&quot;&gt;&lt;b&gt;Object:Grocery&lt;/b&gt;&lt;/p&gt;&lt;hr&gt;&lt;p style=&quot;margin:0px;margin-left:8px;&quot;&gt;Grocery = &quot;Tofu&quot;&lt;br&gt;Description = &quot;...&quot;&lt;/p&gt;&lt;p style=&quot;margin:0px;margin-left:8px;&quot;&gt;Unit = &quot;g&quot;&lt;/p&gt;" style="verticalAlign=top;align=left;overflow=fill;fontSize=12;fontFamily=Helvetica;html=1;fillColor=#e1d5e7;strokeColor=#9673a6;" vertex="1" parent="mLFEw-IBUbFVCugntGrT-101">
+          <mxGeometry width="130" height="77.58620689655172" as="geometry" />
+        </mxCell>
+        <mxCell id="mLFEw-IBUbFVCugntGrT-103" value="&lt;p style=&quot;margin:0px;margin-top:4px;text-align:center;text-decoration:underline;&quot;&gt;&lt;b&gt;Object:Grocery&lt;/b&gt;&lt;/p&gt;&lt;hr&gt;&lt;p style=&quot;margin:0px;margin-left:8px;&quot;&gt;Grocery = &quot;Yoghurt&quot;&lt;br&gt;Description = &quot;...&quot;&lt;/p&gt;&lt;p style=&quot;margin:0px;margin-left:8px;&quot;&gt;Unit = &quot;piece&quot;&lt;/p&gt;" style="verticalAlign=top;align=left;overflow=fill;fontSize=12;fontFamily=Helvetica;html=1;fillColor=#e1d5e7;strokeColor=#9673a6;" vertex="1" parent="mLFEw-IBUbFVCugntGrT-101">
+          <mxGeometry y="86.20689655172413" width="130" height="77.58620689655172" as="geometry" />
+        </mxCell>
+        <mxCell id="mLFEw-IBUbFVCugntGrT-104" value="&lt;p style=&quot;margin:0px;margin-top:4px;text-align:center;text-decoration:underline;&quot;&gt;&lt;b&gt;Object:Grocery&lt;/b&gt;&lt;/p&gt;&lt;hr&gt;&lt;p style=&quot;margin:0px;margin-left:8px;&quot;&gt;Grocery = &quot;Sliced Bread&quot;&lt;br&gt;Description = &quot;...&quot;&lt;/p&gt;&lt;p style=&quot;margin:0px;margin-left:8px;&quot;&gt;Unit = &quot;slice&quot;&lt;/p&gt;" style="verticalAlign=top;align=left;overflow=fill;fontSize=12;fontFamily=Helvetica;html=1;fillColor=#e1d5e7;strokeColor=#9673a6;" vertex="1" parent="mLFEw-IBUbFVCugntGrT-101">
+          <mxGeometry y="172.41379310344826" width="130" height="77.58620689655172" as="geometry" />
+        </mxCell>
+        <mxCell id="mLFEw-IBUbFVCugntGrT-105" value="Static Common Groceries" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=14;fontStyle=1" vertex="1" parent="1">
+          <mxGeometry x="725" y="850" width="205" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="mLFEw-IBUbFVCugntGrT-98" value="&lt;p style=&quot;margin:0px;margin-top:4px;text-align:center;text-decoration:underline;&quot;&gt;&lt;b&gt;Object:Grocery&lt;/b&gt;&lt;/p&gt;&lt;hr&gt;&lt;p style=&quot;margin:0px;margin-left:8px;&quot;&gt;Grocery = &quot;Bread&quot;&lt;br&gt;Description = &quot;...&quot;&lt;/p&gt;&lt;p style=&quot;margin:0px;margin-left:8px;&quot;&gt;Unit = &quot;loaf&quot;&lt;/p&gt;" style="verticalAlign=top;align=left;overflow=fill;fontSize=12;fontFamily=Helvetica;html=1;fillColor=#e1d5e7;strokeColor=#9673a6;" vertex="1" parent="1">
+          <mxGeometry x="871.8421052631579" y="1414.7058823529412" width="126.31578947368422" height="74.11764705882352" as="geometry" />
+        </mxCell>
+        <mxCell id="mLFEw-IBUbFVCugntGrT-99" value="&lt;p style=&quot;margin:0px;margin-top:4px;text-align:center;text-decoration:underline;&quot;&gt;&lt;b&gt;Object:Grocery&lt;/b&gt;&lt;/p&gt;&lt;hr&gt;&lt;p style=&quot;margin:0px;margin-left:8px;&quot;&gt;Grocery = &quot;Swiss Cheese&quot;&lt;br&gt;Description = &quot;...&quot;&lt;/p&gt;&lt;p style=&quot;margin:0px;margin-left:8px;&quot;&gt;Unit = &quot;g&quot;&lt;/p&gt;" style="verticalAlign=top;align=left;overflow=fill;fontSize=12;fontFamily=Helvetica;html=1;fillColor=#e1d5e7;strokeColor=#9673a6;" vertex="1" parent="1">
+          <mxGeometry x="871.8421052631579" y="1497.0588235294117" width="126.31578947368422" height="74.11764705882352" as="geometry" />
+        </mxCell>
+        <mxCell id="mLFEw-IBUbFVCugntGrT-100" value="&lt;p style=&quot;margin:0px;margin-top:4px;text-align:center;text-decoration:underline;&quot;&gt;&lt;b&gt;Object:Grocery&lt;/b&gt;&lt;/p&gt;&lt;hr&gt;&lt;p style=&quot;margin:0px;margin-left:8px;&quot;&gt;Grocery = &quot;Bread Flour&quot;&lt;br&gt;Description = &quot;...&quot;&lt;/p&gt;&lt;p style=&quot;margin:0px;margin-left:8px;&quot;&gt;Unit = &quot;g&quot;&lt;/p&gt;" style="verticalAlign=top;align=left;overflow=fill;fontSize=12;fontFamily=Helvetica;html=1;fillColor=#e1d5e7;strokeColor=#9673a6;" vertex="1" parent="1">
+          <mxGeometry x="871.8421052631579" y="1579.4117647058824" width="126.31578947368422" height="74.11764705882352" as="geometry" />
+        </mxCell>
+        <mxCell id="mLFEw-IBUbFVCugntGrT-107" value="&lt;p style=&quot;margin:0px;margin-top:4px;text-align:center;text-decoration:underline;&quot;&gt;&lt;b&gt;Object:Grocery&lt;/b&gt;&lt;/p&gt;&lt;hr&gt;&lt;p style=&quot;margin:0px;margin-left:8px;&quot;&gt;Grocery = &quot;Bread&quot;&lt;br&gt;Description = &quot;...&quot;&lt;/p&gt;&lt;p style=&quot;margin:0px;margin-left:8px;&quot;&gt;Unit = &quot;loaf&quot;&lt;/p&gt;&lt;p style=&quot;margin:0px;margin-left:8px;&quot;&gt;KitchenUuid = &quot;&quot;&lt;/p&gt;" style="verticalAlign=top;align=left;overflow=fill;fontSize=12;fontFamily=Helvetica;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" vertex="1" parent="1">
+          <mxGeometry x="295" y="530" width="200" height="100" as="geometry" />
+        </mxCell>
+        <mxCell id="mLFEw-IBUbFVCugntGrT-108" value="&lt;p style=&quot;margin:0px;margin-top:4px;text-align:center;text-decoration:underline;&quot;&gt;&lt;b&gt;Object:Grocery&lt;/b&gt;&lt;/p&gt;&lt;hr&gt;&lt;p style=&quot;margin:0px;margin-left:8px;&quot;&gt;Grocery = &quot;Whey Powder&quot;&lt;br&gt;Description = &quot;...&quot;&lt;/p&gt;&lt;p style=&quot;margin:0px;margin-left:8px;&quot;&gt;Unit = &quot;g&quot;&lt;/p&gt;&lt;p style=&quot;margin:0px;margin-left:8px;&quot;&gt;KitchenUuid = &quot;&amp;lt;yuriikitchenuuid&amp;gt;&quot;&lt;/p&gt;" style="verticalAlign=top;align=left;overflow=fill;fontSize=12;fontFamily=Helvetica;html=1;fillColor=#d5e8d4;strokeColor=#82b366;" vertex="1" parent="1">
+          <mxGeometry x="295" y="640" width="200" height="100" as="geometry" />
+        </mxCell>
+        <mxCell id="mLFEw-IBUbFVCugntGrT-109" value="&lt;p style=&quot;margin:0px;margin-top:4px;text-align:center;text-decoration:underline;&quot;&gt;&lt;b&gt;Object:Grocery&lt;/b&gt;&lt;/p&gt;&lt;hr&gt;&lt;p style=&quot;margin:0px;margin-left:8px;&quot;&gt;Grocery = &quot;Tofu&quot;&lt;br&gt;Description = &quot;...&quot;&lt;/p&gt;&lt;p style=&quot;margin:0px;margin-left:8px;&quot;&gt;Unit = &quot;g&quot;&lt;/p&gt;&lt;p style=&quot;margin:0px;margin-left:8px;&quot;&gt;KitchenUuid = &quot;&amp;lt;felixkitchenuuid&amp;gt;&quot;&lt;/p&gt;" style="verticalAlign=top;align=left;overflow=fill;fontSize=12;fontFamily=Helvetica;html=1;fillColor=#e1d5e7;strokeColor=#9673a6;" vertex="1" parent="1">
+          <mxGeometry x="295" y="750" width="200" height="100" as="geometry" />
+        </mxCell>
+        <mxCell id="mLFEw-IBUbFVCugntGrT-110" value="Downside: cannot share grocery definitions between kitchens. Possible alternative would be to use group/role-based approach?" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=top;whiteSpace=wrap;rounded=0;fontSize=14;" vertex="1" parent="1">
+          <mxGeometry x="530" y="590" width="325" height="110" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+  <diagram id="iM6F1zUZ0-T31rPD0Dkk" name="User Stories">
+    <mxGraphModel grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" page="1" fold="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="owRdolB94a8SIPLNldH9-7" value="&lt;b&gt;Registration&lt;/b&gt;&lt;br&gt;&lt;ol&gt;&lt;li&gt;Provide either &lt;b&gt;email, username, password&lt;/b&gt;&amp;nbsp;or &lt;b&gt;oauth&lt;/b&gt;&lt;/li&gt;&lt;li&gt;Create user&lt;br&gt;&lt;/li&gt;&lt;/ol&gt;" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=top;whiteSpace=wrap;rounded=0;sketch=0;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="20" width="340" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="-8Gsv_FD770SFt3N5u31-2" value="&lt;b&gt;Login&lt;/b&gt;&lt;br&gt;&lt;ol&gt;&lt;li&gt;Receive either&amp;nbsp;&lt;b&gt;email, username with password&lt;/b&gt;&amp;nbsp;or &lt;b&gt;oauth&lt;/b&gt;&lt;/li&gt;&lt;li&gt;Return &quot;JWT&quot; to the client [Sign in]&lt;/li&gt;&lt;/ol&gt;" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=top;whiteSpace=wrap;rounded=0;sketch=0;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="20" y="60" width="370" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="NYwl1S_MVDx4ugDYiptr-1" value="&lt;b&gt;Create Kitchen&lt;/b&gt;&lt;br&gt;&lt;ol&gt;&lt;li&gt;Provide &lt;b&gt;name&lt;/b&gt;, &lt;b&gt;public status&lt;/b&gt;&amp;nbsp;and at least one &lt;b&gt;head chef &lt;/b&gt;(defaults to current user?)&lt;/li&gt;&lt;/ol&gt;" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=top;whiteSpace=wrap;rounded=0;sketch=0;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="20" y="120" width="420" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="e2AY3VtRdNQ8uZ5R_vPM-1" value="&lt;b&gt;Join Kitchen&lt;/b&gt;&lt;br&gt;&lt;ol&gt;&lt;li&gt;Make a request to join kitchens from a list of public kitchens&lt;/li&gt;&lt;li&gt;Have this request be granted or denied&lt;/li&gt;&lt;/ol&gt;" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=top;whiteSpace=wrap;rounded=0;sketch=0;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="20" y="180" width="420" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="ML8kNjeV_jz4esejVe2w-1" value="" style="rounded=1;absoluteArcSize=1;html=1;arcSize=10;fillColor=#dae8fc;strokeColor=#6c8ebf;" vertex="1" parent="1">
+          <mxGeometry x="480" y="200" width="200" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="ML8kNjeV_jz4esejVe2w-2" value="Yurii&#39;s Kitchen" style="html=1;shape=mxgraph.er.anchor;whiteSpace=wrap;" vertex="1" parent="ML8kNjeV_jz4esejVe2w-1">
+          <mxGeometry width="100" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="ML8kNjeV_jz4esejVe2w-3" value="Ask to Join" style="rounded=1;absoluteArcSize=1;html=1;arcSize=10;whiteSpace=wrap;points=[];fillColor=#d5e8d4;strokeColor=#82b366;" vertex="1" parent="ML8kNjeV_jz4esejVe2w-1">
+          <mxGeometry x="120" y="6" width="70" height="28" as="geometry" />
+        </mxCell>
+        <mxCell id="cPUSL7POeAIbfOcsBQOh-1" value="&lt;b&gt;Modify Kitchen&lt;/b&gt;&lt;br&gt;&lt;ol&gt;&lt;li&gt;Change&amp;nbsp;&lt;b&gt;name&lt;/b&gt;,&amp;nbsp;&lt;b&gt;public status, members, groceries&amp;nbsp;&lt;/b&gt;or&lt;b&gt; recipes&lt;/b&gt;&lt;/li&gt;&lt;/ol&gt;" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=top;whiteSpace=wrap;rounded=0;sketch=0;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="20" y="240" width="420" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="cPUSL7POeAIbfOcsBQOh-2" value="&lt;b&gt;Delete Kitchen&lt;/b&gt;&lt;br&gt;&lt;ol&gt;&lt;li&gt;Delete kitchen and all constituent recipes&lt;/li&gt;&lt;/ol&gt;" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=top;whiteSpace=wrap;rounded=0;sketch=0;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="20" y="290" width="420" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="FGBTduRzzULfUb9VtVwh-1" value="&lt;b&gt;Add Grocery Definition&lt;/b&gt;&lt;br&gt;&lt;ol&gt;&lt;li&gt;Add &lt;b&gt;name, description, unit&lt;/b&gt; and &lt;b&gt;assign grocery definition&lt;/b&gt; to a kitchen [Create Grocery]&lt;/li&gt;&lt;/ol&gt;" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=top;whiteSpace=wrap;rounded=0;sketch=0;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="20" y="350" width="540" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="Gumfv2Mt3vorin2pq9cV-1" value="&lt;b&gt;Modify Grocery Definition&lt;/b&gt;&lt;br&gt;&lt;ol&gt;&lt;li&gt;Change&amp;nbsp;&lt;b&gt;name, &lt;/b&gt;or&lt;b&gt; description&lt;/b&gt;&lt;/li&gt;&lt;li&gt;Change&amp;nbsp;&lt;b&gt;&lt;strike&gt;unit&lt;/strike&gt;&lt;/b&gt; and &lt;b&gt;&lt;strike&gt;reassign grocery definition&lt;/strike&gt; &lt;/b&gt;(user warning or restricted in some cases?)&lt;/li&gt;&lt;/ol&gt;" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=top;whiteSpace=wrap;rounded=0;sketch=0;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="20" y="400" width="540" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="6O3qKqgATKqJLM1OFTPa-1" value="&lt;b&gt;Add ingredients to Kitchen&amp;nbsp;&lt;/b&gt;&lt;br&gt;&lt;ol&gt;&lt;li&gt;Choose Grocery Definition&lt;/li&gt;&lt;li&gt;Define amount of ingredient&lt;/li&gt;&lt;/ol&gt;" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=top;whiteSpace=wrap;rounded=0;sketch=0;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="20" y="480" width="540" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="c2CQbnTVLRfGuS_VSjE4-1" value="&lt;b&gt;Modify ingredients within Kitchen&amp;nbsp;&lt;/b&gt;&lt;br&gt;&lt;ol&gt;&lt;li&gt;Redefine amount of ingredient&lt;/li&gt;&lt;/ol&gt;" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=top;whiteSpace=wrap;rounded=0;sketch=0;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="20" y="560" width="540" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="f9Yh-usa73bXeWOVujBC-1" value="&lt;b&gt;Add Recipe to Kitchen&amp;nbsp;&lt;/b&gt;&lt;br&gt;&lt;ol&gt;&lt;li&gt;Provide &lt;b&gt;name&lt;/b&gt;, &lt;b&gt;description&lt;/b&gt;, &lt;b&gt;ingredients&lt;/b&gt;, and &lt;b&gt;instructions&lt;/b&gt;&lt;/li&gt;&lt;li&gt;Optionally provide&amp;nbsp;&lt;b&gt;comment&lt;/b&gt;&amp;nbsp;for recipe&lt;/li&gt;&lt;/ol&gt;" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=top;whiteSpace=wrap;rounded=0;sketch=0;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="20" y="620" width="540" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="iDps3Qbd2CGsuuQZLRGJ-1" value="&lt;font face=&quot;helvetica&quot;&gt;&lt;b&gt;Cook Recipe&lt;/b&gt;&lt;/font&gt;&lt;br style=&quot;color: rgb(0, 0, 0); font-family: helvetica; font-size: 12px; font-style: normal; font-weight: 400; letter-spacing: normal; text-align: left; text-indent: 0px; text-transform: none; word-spacing: 0px;&quot;&gt;&lt;ol style=&quot;color: rgb(0, 0, 0); font-family: helvetica; font-size: 12px; font-style: normal; font-weight: 400; letter-spacing: normal; text-align: left; text-indent: 0px; text-transform: none; word-spacing: 0px;&quot;&gt;&lt;li style=&quot;&quot;&gt;Choose Recipe&lt;/li&gt;&lt;li style=&quot;&quot;&gt;Cook Recipe (Subtract ingredients and create shopping list if needed)&lt;/li&gt;&lt;/ol&gt;" style="text;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="20" y="790" width="580" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="b5FEz6ZdUHQgq50beRdO-1" value="&lt;b&gt;Modify Recipe&amp;nbsp;&lt;/b&gt;&lt;br&gt;&lt;ol&gt;&lt;li&gt;Change&amp;nbsp;&lt;b&gt;name&lt;/b&gt;, &lt;b&gt;description&lt;/b&gt;, &lt;b&gt;ingredients&lt;/b&gt;, and &lt;b&gt;instructions&lt;/b&gt;&lt;/li&gt;&lt;li&gt;Optionally&lt;b&gt; &lt;/b&gt;add, delete, or change&lt;b&gt; comment &lt;/b&gt;in recipe&lt;/li&gt;&lt;/ol&gt;" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=top;whiteSpace=wrap;rounded=0;sketch=0;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="20" y="680" width="540" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="b5FEz6ZdUHQgq50beRdO-2" value="&lt;b&gt;Share Recipe&amp;nbsp;&lt;/b&gt;&lt;br&gt;&lt;ol&gt;&lt;li&gt;TODO&lt;/li&gt;&lt;/ol&gt;" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=top;whiteSpace=wrap;rounded=0;sketch=0;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="20" y="740" width="540" height="50" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
